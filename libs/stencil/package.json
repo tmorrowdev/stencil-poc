@@ -1,0 +1,16 @@
+{
+  "name": "@wc/stencil",
+  "version": "0.0.1",
+  "main": "./dist/index.cjs.js",
+  "module": "./dist/index.js",
+  "esnext": "./dist/esm/index.mjs", 
+  "es2020": "./dist/esm/index.mjs",
+  "types": "./dist/types/index.d.ts",
+  "collection": "./dist/collection/collection-manifest.json",
+  "collection:main": "./dist/collection/index.js",
+  "unpkg": "./dist/stencil/stencil.js",
+  "files": [
+    "dist/",
+    "loader/"
+  ]
+}

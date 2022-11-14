@@ -3,6 +3,11 @@
   "version": 2,
   "projects": {
     "project": "apps/project",
-    "project-e2e": "apps/project-e2e"
+    "project-e2e": "apps/project-e2e",
+    "stencil": "libs/stencil",
+    "stencil-angular": "libs/stencil-angular",
+    "stencil-react": "libs/stencil-react",
+    "ui": "apps/ui",
+    "ui-e2e": "apps/ui-e2e"
   }
 }

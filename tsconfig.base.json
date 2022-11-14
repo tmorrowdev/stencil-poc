@@ -8,13 +8,20 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "importHelpers": true,
-    "target": "es2015",
+    "target": "es2020",
     "module": "esnext",
-    "lib": ["es2017", "dom"],
+    "lib": ["es2020", "ESNext.AsyncIterable", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@aries/angular": ["libs/angular-output/src/index.ts"],
+      "@stencil/angular": ["libs/stencil-angular/src/index.ts"],
+      "@stencil/react": ["libs/stencil-react/src/index.ts"],
+      "@ui-mfe": ["libs/shared-ui/src/index.ts"],
+      "@wc/stencil": ["dist/libs/stencil"],
+      "@wc/stencil/loader": ["dist/libs/stencil/loader"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

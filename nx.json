@@ -5,7 +5,8 @@
     "defaultBase": "main"
   },
   "cli": {
-    "packageManager": "npm"
+    "packageManager": "npm",
+    "defaultCollection": "@nxext/stencil"
   },
   "implicitDependencies": {
     "package.json": {
@@ -40,6 +41,11 @@
     },
     "@nrwl/angular:component": {
       "style": "scss"
+    },
+    "@nrwl/react": {
+      "application": {
+        "babel": true
+      }
     }
   },
   "defaultProject": "project"
