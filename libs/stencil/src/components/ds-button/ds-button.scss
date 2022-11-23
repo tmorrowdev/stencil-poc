@@ -1,0 +1,67 @@
+:host {
+  display: block;
+}
+$blue-steel: #4571c4;
+$blue-steel-dark: #315db0;
+$coral: #c75943;
+$coral-dark: #a83a24;
+$light: #f0f1f2;
+$light-dark: #e2e3e4;
+button {
+ 
+  &.primary {
+    background-color: $coral;
+
+    &:hover {
+      background-color: $coral-dark;
+    }
+    &:active {
+      background-color: darken($coral-dark, 10%);
+    }
+  }
+  &.secondary {
+    background-color: $blue-steel;
+
+    &:hover {
+      background-color: $blue-steel-dark;
+    }
+    &:active {
+      background-color: darken($blue-steel-dark, 10%);
+    }
+  }
+  &.tertiary {
+    background-color: $light;
+    border: 1px $coral;
+    color: $coral;
+
+
+    &:hover {
+    border: 1px $coral-dark;
+    color: $coral-dark;
+    }
+    &:active {
+    border: 1px darken($coral-dark, 10%);
+    color: darken($coral-dark, 10%);
+    }
+  }
+
+  // Shape variations
+  &.auto {
+    width:auto;
+    height:auto;
+  }
+  &.full {
+    width: 100%;
+    height:  auto;
+  }
+
+  // Size variations
+  &.small {
+    padding: 2px 8px;
+    font-size: 12px;
+  }
+  &.large {
+    padding: 8px 20px;
+    font-size: 16px;
+  }
+}

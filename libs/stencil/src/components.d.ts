@@ -6,6 +6,21 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface DsButton {
+        "disabled": boolean;
+        /**
+          * Choose the size of the button
+         */
+        "size": 'small' | 'large';
+        /**
+          * Which type of button to render
+         */
+        "type": 'primary' | 'secondary' | 'tertiary';
+        /**
+          * Whether the button has fixed or autosized with
+         */
+        "width": 'auto' | 'full';
+    }
     interface MyComponent {
         /**
           * The first name
@@ -22,6 +37,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLDsButtonElement extends Components.DsButton, HTMLStencilElement {
+    }
+    var HTMLDsButtonElement: {
+        prototype: HTMLDsButtonElement;
+        new (): HTMLDsButtonElement;
+    };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
     var HTMLMyComponentElement: {
@@ -29,10 +50,26 @@ declare global {
         new (): HTMLMyComponentElement;
     };
     interface HTMLElementTagNameMap {
+        "ds-button": HTMLDsButtonElement;
         "my-component": HTMLMyComponentElement;
     }
 }
 declare namespace LocalJSX {
+    interface DsButton {
+        "disabled"?: boolean;
+        /**
+          * Choose the size of the button
+         */
+        "size"?: 'small' | 'large';
+        /**
+          * Which type of button to render
+         */
+        "type"?: 'primary' | 'secondary' | 'tertiary';
+        /**
+          * Whether the button has fixed or autosized with
+         */
+        "width"?: 'auto' | 'full';
+    }
     interface MyComponent {
         /**
           * The first name
@@ -48,6 +85,7 @@ declare namespace LocalJSX {
         "middle"?: string;
     }
     interface IntrinsicElements {
+        "ds-button": DsButton;
         "my-component": MyComponent;
     }
 }
@@ -55,6 +93,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "ds-button": LocalJSX.DsButton & JSXBase.HTMLAttributes<HTMLDsButtonElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
         }
     }

@@ -2,12 +2,14 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
-    "project": "apps/project",
+    "ang-output": "libs/ang-output",
     "project-e2e": "apps/project-e2e",
     "stencil": "libs/stencil",
     "stencil-angular": "libs/stencil-angular",
     "stencil-react": "libs/stencil-react",
-    "ui": "apps/ui",
-    "ui-e2e": "apps/ui-e2e"
+    "test-angular": "apps/test-angular",
+    "test-angular-e2e": "apps/test-angular-e2e",
+    "test-react": "apps/test-react",
+    "test-react-e2e": "apps/test-react-e2e"
   }
 }

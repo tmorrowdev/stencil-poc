@@ -1,1 +1,1 @@
-export * from './generated/react-component-lib';
+export * from './generated/components';
