@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-empty-function */
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'test-angular';
+ 
+  public options=['pick me', 'or me', 'not-me']
+  constructor(){}
+  public  showOptions =()=>{
+    return this.options;
+  }
 }

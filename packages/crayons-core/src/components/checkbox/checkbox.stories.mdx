@@ -1,0 +1,69 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+
+# Checkbox
+
+<Meta
+  title='Checkbox'
+  component='fw-checkbox'/>
+
+## Props
+<Props of="fw-checkbox"/>
+
+## Usage
+
+### Default
+<Preview>
+<Story name='Default'>
+{() => '<fw-checkbox></fw-checkbox>'}
+</Story>
+</Preview>
+
+### Checked State
+<Preview>
+<Story name='Checked'>
+{() => '<fw-checkbox checked></fw-checkbox>'}
+</Story>
+</Preview>
+
+### Disabled State
+<Preview>
+<Story name='Disabled'>
+{() => '<fw-checkbox disabled></fw-checkbox>'}
+</Story>
+</Preview>
+
+### Checked and Disabled State
+<Preview>
+<Story name='CheckedDisabled'>
+{() => '<fw-checkbox disabled checked></fw-checkbox>'}
+</Story>
+</Preview>
+
+### Checkbox with Label
+<Preview>
+<Story name='withLabel'>
+{() => '<fw-checkbox>Checkbox Label Here</fw-checkbox>'}
+</Story>
+</Preview>
+
+### Checkbox with Label and in Disabled State
+<Preview>
+<Story name='DisabledWithLabel'>
+{() => '<fw-checkbox disabled>Checkbox Label Here</fw-checkbox>'}
+</Story>
+</Preview>
+
+### Checkbox with Description and Label
+<Preview>
+<Story name='WithDescriptionAndLabel'>
+{() => '<fw-checkbox description="This is a subheading">Checkbox Label Here</fw-checkbox>'}
+</Story>
+</Preview>
+
+
+### Checkbox with Description and Label in Disabled State
+<Preview>
+<Story name='WithDescriptionAndLabelDisabled'>
+{() => '<fw-checkbox disabled description="This is a subheading">Checkbox Label Here</fw-checkbox>'}
+</Story>
+</Preview>

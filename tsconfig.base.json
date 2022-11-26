@@ -15,6 +15,14 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@crayons/angular": [
+        "packages/crayons-extended/custom-objects/crayons-custom-objects-angular/index.ts"
+      ],
+      "@ds/angular": ["libs/crayons-custom-objects-angular/src/index.ts"],
+      "@freshworks/crayons-custom-objects": [
+        "packages/crayons-extended/crayons-custom-objects/"
+      ],
+      "@ds/custom-objects": ["libs/custom-objects/index.ts"],
       "@stencil/angular": ["dist/libs/stencil-angular"],
       "@stencil/react": ["libs/stencil-react/src/index.ts"],
       "@test/other/*": ["dist/libs/other/dist/components/*"],

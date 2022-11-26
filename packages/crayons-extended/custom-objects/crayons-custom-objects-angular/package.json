@@ -1,0 +1,12 @@
+{
+  "name": "@stencil/angular",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "14.0.7",
+    "@angular/core": "14.0.7",
+    "rxjs":"6.6.7"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  }
+}

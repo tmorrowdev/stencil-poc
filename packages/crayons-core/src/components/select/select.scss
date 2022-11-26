@@ -1,0 +1,290 @@
+/**
+  @prop --fw-select-border: Border of the select component
+  @prop --fw-select-border-radius: Border radius of the select component
+  @prop --fw-select-margin-bottom: Bottom margin of the select component
+  @prop --fw-hint-color: Color of the hint text.
+  @prop --fw-warning-color: Color of the warning text.
+  @prop --fw-error-color: Color of the error text.
+*/
+
+@import '../../function-components/field-control.scss';
+
+$label-font: $font-stack;
+$input-bg: $color-milk;
+$help-color: $muted-secondary;
+$error-color: $color-persimmon-800;
+$input-color: $color-elephant-900;
+$input-disabled-bg: $color-smoke-25;
+$input-hover-color: $color-smoke-700;
+$input-focus-color: $color-azure-800;
+$input-border: $color-smoke-100;
+$warning-color: $color-casablanca-300;
+$placeholder-color: $color-smoke-300;
+$disabled-color: $input-disabled-color;
+
+// stylelint-disable a11y/media-prefers-reduced-motion
+@media screen and (prefers-reduced-motion: reduce) {
+  .input-container {
+    transition: none;
+  }
+}
+
+@mixin stateStyle($_color) {
+  border-color: $_color;
+
+  &.has-focus {
+    box-shadow: none;
+    border-color: $_color;
+  }
+
+  &:hover,
+  &:focus {
+    border-color: $_color;
+  }
+
+  & + .help-block {
+    color: $_color;
+  }
+}
+
+:host {
+  display: block;
+}
+
+.button-container {
+  display: flex;
+  fw-button {
+    display: flex;
+    min-width: 0;
+  }
+  .display-tag {
+    display: flex;
+    min-width: 0;
+  }
+}
+
+.readonly-field {
+  .display-tag {
+    padding-inline-start: 8px;
+  }
+}
+
+.input-container {
+  width: calc(100% - 10px);
+  border: var(--fw-select-border, 1px solid $input-border);
+  border-radius: var(--fw-select-border-radius, 4px);
+  padding-inline-start: 10px;
+  background-color: $input-bg;
+  box-shadow: none;
+  min-height: 22px;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+
+  .input-container-inner {
+    display: flex;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    min-width: 0;
+
+    .tag-container {
+      display: flex;
+      flex-wrap: wrap;
+      min-width: inherit;
+
+      &.avatar {
+        min-height: 40px;
+      }
+      /* stylelint-disable-next-line a11y/no-outline-none */
+      &:active,
+      &:focus,
+      &:focus-visible {
+        outline: 0;
+      }
+
+      fw-tag {
+        margin-inline-start: 0px;
+        margin-block-end: 4px;
+        margin-inline-end: 4px;
+        margin-block-start: 4px;
+        display: flex;
+        min-width: inherit;
+      }
+    }
+
+    input {
+      flex-grow: 1;
+      // width: 100%;
+      border: none;
+      font-family: inherit;
+      font-size: $font-size-14;
+      font-weight: $font-weight-500;
+      letter-spacing: 0;
+      line-height: 1.4;
+      background-color: $input-bg;
+      min-width: 20px;
+      min-height: 22px;
+      box-sizing: border-box;
+      overflow: hidden;
+      margin-inline: 0px;
+      margin-block: 4px;
+
+      &:focus {
+        border: none;
+        outline: none;
+      }
+
+      &.multi-select {
+        width: auto;
+      }
+
+      &:disabled {
+        color: $disabled-color;
+        background-color: $input-disabled-bg !important;
+        border-color: transparent;
+        pointer-events: none;
+      }
+    }
+  }
+
+  fw-spinner {
+    margin-inline-end: 8px;
+  }
+
+  &:hover,
+  &:focus {
+    border: 1px $input-hover-color solid;
+  }
+
+  &.error {
+    @include stateStyle($error-color);
+  }
+
+  &.warning {
+    @include stateStyle($warning-color);
+  }
+
+  &.select-disabled {
+    color: $disabled-color;
+    border: var(--fw-select-border, 1px solid $color-smoke-50);
+    background-color: $input-disabled-bg !important;
+    border-style: solid;
+    cursor: not-allowed;
+
+    &:hover,
+    &:focus {
+      border: 1px solid $color-smoke-50;
+    }
+  }
+}
+
+.tag-container {
+  .bold-tag {
+    font-weight: $font-weight-600;
+  }
+
+  .tag-clickable {
+    cursor: pointer;
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+  }
+
+  .tag-disabled {
+    cursor: not-allowed;
+  }
+}
+
+.has-focus {
+  .input-container {
+    outline: none;
+    background: $input-bg;
+    border: 1px solid transparent;
+    box-shadow: 0 0 0 2px $input-focus-color;
+
+    &.error {
+      @include stateStyle($error-color);
+      box-shadow: none;
+    }
+
+    &.warning {
+      @include stateStyle($warning-color);
+      box-shadow: 0 0 0 1px $warning-color;
+    }
+  }
+}
+
+.select-container {
+  margin-block-end: var(--fw-select-margin-bottom, 0px);
+  width: inherit;
+  height: inherit;
+  position: relative;
+
+  .dropdown {
+    z-index: 99;
+  }
+
+  .dropdown-status-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-inline-end: 8px;
+    min-width: 20px;
+    min-height: 20px;
+    transition: all 0.15s;
+    --icon-color: $color-elephant-800;
+  }
+
+  //Help Block
+  .help-block {
+    font-size: $font-size-12;
+    margin-block-start: 4px;
+    line-height: 20px;
+    color: $help-color;
+    position: inherit;
+    margin-block-end: 0;
+    display: block;
+    padding-inline-start: 2px;
+  }
+
+  .dropdown-status-icon.expanded {
+    transform: rotate(180deg);
+  }
+
+  &.error {
+    @include stateStyle($error-color);
+  }
+
+  &.warning {
+    @include stateStyle($warning-color);
+  }
+}
+
+::placeholder {
+  color: $placeholder-color;
+  opacity: 1;
+}
+
+::-webkit-input-placeholder {
+  color: $placeholder-color;
+}
+
+::-moz-placeholder {
+  color: $placeholder-color;
+}
+
+:-ms-input-placeholder {
+  color: $placeholder-color;
+}
+
+:-moz-placeholder {
+  color: $placeholder-color;
+}

@@ -1,0 +1,121 @@
+@media screen and (prefers-reduced-motion: reduce) {
+  .toast.is-open {
+    animation: none;
+  }
+}
+
+.toast.is-open {
+  display: block;
+  animation-duration: 0.5s;
+  animation-name: fadeIn;
+  z-index: 999;
+}
+
+.toast {
+  display: none;
+  position: relative;
+  inset-block-start: 10px;
+  width: 400px;
+  padding-inline-start: 0px;
+  padding-block-end: 16px;
+  padding-inline-end: 0px;
+  padding-block-start: 0px;
+  border: 1px solid $color-smoke-50;
+  border-radius: 4px;
+  background-color: $color-milk;
+  margin-block-end: 16px;
+  box-sizing: border-box;
+  box-shadow: 0px 2px 4px rgba(18, 52, 77, 0.06),
+    0px 2px 16px rgba(18, 52, 77, 0.16);
+
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  white-space: normal;
+
+  &.success {
+    border-block-start: 5px solid $color-jungle-500;
+  }
+
+  &.error {
+    border-block-start: 5px solid $color-persimmon-700;
+  }
+
+  &.warning {
+    border-block-start: 5px solid $color-casablanca-500;
+  }
+
+  &.inprogress {
+    border-block-start: 5px solid $color-azure-800;
+  }
+}
+
+.toast-container {
+  margin-block-start: 16px;
+  display: flex;
+  align-items: flex-start;
+  place-content: center;
+
+  .content {
+    color: $color-elephant-900;
+    line-height: 20px;
+    flex: 1 1 auto;
+    font-size: $font-size-14;
+    font-weight: $font-weight-500;
+    vertical-align: top;
+  }
+
+  .icon {
+    display: flex;
+    height: 20px;
+    align-items: center;
+    box-sizing: border-box;
+    margin-inline: 16px;
+    margin-block: 0;
+  }
+
+  .remove {
+    display: flex;
+    height: 20px;
+    align-items: center;
+    box-sizing: border-box;
+    margin-inline: 12px;
+    margin-block: 0;
+  }
+}
+
+.action-link {
+  color: $color-azure-800;
+  line-height: 14px;
+  cursor: pointer;
+  font-size: $font-size-12;
+  font-weight: $font-weight-600;
+  padding-inline: 0px;
+  padding-block: 8px;
+}
+
+@keyframes fadeOut {
+  100% {
+    inset-block-start: -600px;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    inset-block-start: -600px;
+  }
+
+  100% {
+    inset-block-start: 10px;
+  }
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  .toast.fade-out {
+    animation: none;
+  }
+}
+
+.toast.fade-out {
+  animation-duration: 1s;
+  animation-name: fadeOut;
+}

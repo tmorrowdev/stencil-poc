@@ -36,7 +36,7 @@ export const config: Config = {
       directivesProxyFile:
         'libs/stencil-angular/src/generated/directives/proxies.ts',
       directivesArrayFile:
-        'libs/ang-output/src/generated/directives/index.ts',
+        'libs/stencil-angular/src/generated/directives/index.ts',
       valueAccessorConfigs: angularValueAccessorBindings,
     }),
 

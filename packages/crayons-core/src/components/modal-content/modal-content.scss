@@ -1,0 +1,16 @@
+:host {
+  flex: 1;
+  overflow-y: auto;
+  font-size: $font-size-14;
+  font-weight: $font-weight-default;
+  color: $color-elephant-900;
+  line-height: 20px;
+}
+
+.content {
+  padding-block-end: 32px;
+  padding-inline: 32px;
+  padding-block-start: 12px;
+  overflow: visible;
+  box-sizing: border-box;
+}

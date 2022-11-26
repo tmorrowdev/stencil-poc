@@ -1,0 +1,11 @@
+/**
+  @prop --fw-tab-panel-width: width of the tab container.
+  @prop --fw-tab-panel-height: height of the tab container.
+*/
+
+:host {
+  display: block;
+  padding: 0;
+  width: var(--fw-tab-panel-width, 'inherit');
+  height: var(--fw-tab-panel-height, 'inherit');
+}

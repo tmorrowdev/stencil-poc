@@ -1,0 +1,134 @@
+.tag {
+  min-width: inherit;
+  display: inline-flex;
+  align-items: center;
+  color: $color-elephant-900;
+  font-size: $font-size-12;
+  word-break: break-all;
+
+  &:hover {
+    outline: 1px solid $color-smoke-200;
+  }
+
+  &:focus {
+    outline: 2px solid $color-azure-800;
+  }
+
+  &.disabled {
+    outline: 0px !important;
+  }
+
+  &.focused {
+    outline: 2px solid $color-azure-800 !important;
+  }
+
+  &.transparent {
+    outline: none !important;
+    background: transparent !important;
+  }
+
+  &.tag-with-ellipsis {
+    display: flex;
+    min-width: 0;
+  }
+
+  &.error {
+    outline: 1px solid $color-persimmon-900;
+    background: $color-persimmon-50 !important;
+
+    &:hover {
+      background: $color-persimmon-100 !important;
+    }
+
+    &:focus {
+      outline: 2px solid $color-azure-800;
+    }
+  }
+
+  .content {
+    line-height: 20px;
+    vertical-align: middle;
+  }
+
+  .ellipsis {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .truncated-content {
+    min-width: inherit;
+  }
+
+  .end-padding {
+    padding-inline-end: 8px;
+  }
+
+  .primary {
+    font-weight: $font-weight-600;
+  }
+
+  .secondary {
+    padding-inline-start: 8px;
+    font-weight: $font-weight-400 !important;
+  }
+
+  &-standard {
+    padding-inline-start: 8px;
+    padding-block-end: 2px;
+    padding-inline-end: 2px;
+    padding-block-start: 2px;
+    border-radius: 4px;
+    font-weight: 600;
+    background-color: $color-smoke-50;
+  }
+
+  &-avatar {
+    padding: 4px;
+    border-radius: 24px;
+    background: linear-gradient(180deg, $color-smoke-25 2.56%, #f3f5f7 95.75%);
+
+    fw-avatar {
+      margin-inline-end: 8px;
+    }
+  }
+
+  .remove-btn {
+    margin-inline-start: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: $color-elephant-800;
+    font-size: $font-size-16;
+
+    &.standard {
+      min-height: 20px;
+      min-width: 20px;
+      border-radius: 4px;
+    }
+
+    &.avatar {
+      min-height: 24px;
+      min-width: 24px;
+      border-radius: 16px;
+
+      &:hover,
+      &:focus {
+        background-color: $color-milk;
+        cursor: pointer;
+      }
+    }
+
+    &:hover,
+    &:focus {
+      background-color: $color-smoke-100;
+      cursor: pointer;
+    }
+
+    &.disabled {
+      color: $color-elephant-600;
+      background-color: $color-smoke-50;
+      cursor: not-allowed;
+    }
+  }
+}

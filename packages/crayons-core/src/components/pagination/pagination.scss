@@ -1,0 +1,16 @@
+:host {
+  display: flex;
+  align-items: center;
+}
+
+.current-record {
+  color: $app-info-color;
+  margin-inline-start: 10px;
+  margin-inline-end: 14px;
+  line-height: 20px;
+  font-size: 14px;
+
+  .record {
+    font-weight: 700;
+  }
+}

@@ -1,0 +1,247 @@
+/**
+  @prop --fw-hint-color: Color of the hint text.
+  @prop --fw-warning-color: Color of the warning text.
+  @prop --fw-error-color: Color of the error text.
+*/
+
+@import '../../function-components/field-control.scss';
+
+:host {
+  display: inline-block;
+  position: relative;
+}
+
+/* Focus event occurs on the root element */
+/* stylelint-disable-next-line a11y/no-outline-none -- currently on focus, 
+  outline is on checkbox. if we dont remove outline on host there will be a
+  second outline wrapping label and description.
+*/
+:host(:focus) {
+  outline: none;
+
+  input[type='checkbox'] + label {
+    &::before {
+      border: 1px solid transparent;
+      box-shadow: 0 0 0 2px rgb(44, 92, 197);
+    }
+  }
+  input[type='checkbox'] {
+    &:checked + label {
+      &::before {
+        border: 1px solid #ffffff;
+      }
+    }
+  }
+
+  input[type='checkbox'][disabled] + label {
+    &::before {
+      box-shadow: none;
+      border: 1px solid #dadfe3;
+    }
+  }
+}
+
+/* Hover event occurs on the root element */
+:host(:hover) {
+  input[type='checkbox'] + label {
+    &::before {
+      border-color: $checkbox-color;
+      box-shadow: 0 0 0 5px rgb(235, 239, 243);
+    }
+  }
+
+  input[type='checkbox'] {
+    &:checked + label {
+      &::before {
+        border-color: $color-azure-800;
+      }
+    }
+  }
+
+  input[type='checkbox'][disabled] + label {
+    cursor: not-allowed;
+
+    &::before {
+      box-shadow: none;
+      border: 1px solid #dadfe3;
+    }
+  }
+}
+
+.checkbox-container {
+  cursor: pointer;
+
+  &.disabled {
+    cursor: not-allowed;
+  }
+}
+
+#description {
+  font-size: 12px;
+  color: #475867;
+  letter-spacing: 0;
+  line-height: 20px;
+  position: relative;
+  font-weight: 400;
+  word-wrap: break-word;
+  padding-inline-start: 22px;
+}
+
+input[type='checkbox'] {
+  display: none;
+
+  & + label {
+    user-select: none;
+    margin-block-end: 0;
+    vertical-align: middle;
+    font-size: 14px;
+    color: #12344d;
+    line-height: 20px;
+    font-weight: 400;
+    cursor: inherit;
+
+    .with-description {
+      font-weight: 600;
+    }
+
+    #label {
+      padding-inline-start: 22px;
+      box-decoration-break: clone;
+      -webkit-box-decoration-break: clone;
+
+      &.required::after {
+        content: '*';
+        position: relative;
+        display: inline-block;
+        inset-block-start: 2px;
+        font-size: 14px;
+        color: $app-error;
+        padding-inline-start: 2px;
+        font-weight: $font-weight-bold;
+      }
+    }
+
+    @media screen and (prefers-reduced-motion: reduce) {
+      &::before {
+        transition: none;
+      }
+    }
+
+    &::before {
+      position: absolute;
+      inset-inline-start: 0;
+      inset-block-start: 4px;
+      display: block;
+      content: '';
+      border: $checkbox-border-width solid $color-smoke-700;
+      height: 14px;
+      width: 14px;
+      background-color: $input-bg;
+      transition: all 0.2s ease;
+      box-sizing: border-box;
+      border-radius: 2px;
+    }
+
+    &.error {
+      @media screen and (prefers-reduced-motion: reduce) {
+        &::before {
+          transition: none;
+        }
+      }
+      &::before {
+        position: absolute;
+        inset-inline-start: 0;
+        inset-block-start: 4px;
+        display: block;
+        content: '';
+        border: $checkbox-border-width solid $app-error;
+        height: 14px;
+        width: 14px;
+        background-color: $input-bg;
+        box-sizing: border-box;
+        border-radius: 2px;
+        transition: all 0.2s ease;
+      }
+    }
+
+    @media screen and (prefers-reduced-motion: reduce) {
+      .after {
+        transition: none;
+      }
+    }
+
+    .after {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      content: '';
+      inset-inline-start: 3px;
+      inset-block-start: 7px;
+      width: 8px;
+      height: 8px;
+      opacity: 0;
+      transition: opacity 0.2s ease-in-out;
+      box-sizing: border-box;
+    }
+  }
+
+  &:checked + label {
+    &::before {
+      background: $checkbox-checked-color;
+      border-color: $checkbox-checked-color;
+      box-shadow: none;
+    }
+
+    .after {
+      opacity: 1;
+    }
+  }
+
+  &:checked:hover + label {
+    &::before {
+      border-color: $color-azure-800;
+      box-shadow: 0 0 0 5px rgb(235, 239, 243);
+    }
+
+    .after {
+      opacity: 1;
+    }
+  }
+
+  &:checked:focus + label {
+    &::before {
+      background: $checkbox-checked-color;
+      border-color: $app-light-bg;
+      box-shadow: 0 0 0 1px rgb(44, 92, 197);
+    }
+
+    .after {
+      opacity: 1;
+    }
+  }
+
+  &[disabled] {
+    & + label {
+      color: $color-smoke-300;
+
+      .label-field {
+        color: $color-smoke-300;
+      }
+
+      &::before {
+        border-color: $disabled-color;
+        background-color: $ticket-tag-background;
+      }
+    }
+
+    &:checked + label {
+      color: $color-smoke-300;
+
+      &::before {
+        background-color: $ticket-tag-background;
+        border-color: $disabled-color;
+      }
+    }
+  }
+}

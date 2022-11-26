@@ -1,0 +1,114 @@
+$primary-color: $color-elephant-900;
+$selected-color: $color-azure-800;
+$disabled-color: $color-smoke-300;
+$bg-color: $color-azure-50;
+$bg-color-hover: $color-smoke-50;
+$bg-color-disabled: $color-smoke-25;
+
+.select-center {
+  display: flex;
+  align-items: center;
+}
+
+.select-option {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  color: $primary-color;
+  font-size: $font-size-14;
+  border-radius: 4px;
+  list-style: none;
+  line-height: $line-height-label;
+  word-break: break-word;
+  word-wrap: break-word;
+  position: relative;
+  margin-block-end: 4px;
+  padding-inline-end: 8px;
+
+  &.single-line {
+    padding-block: 6px;
+  }
+
+  &.multi-line {
+    padding-block: 8px;
+  }
+
+  &.standard {
+    padding-inline-start: 0px;
+  }
+
+  &.icon {
+    padding-inline-start: 10px;
+  }
+
+  &.avatar {
+    padding-inline-start: 4px;
+  }
+
+  &.selected {
+    font-weight: $font-weight-600;
+    background-color: $dropdown-selected;
+    &:hover,
+    &:focus {
+      background-color: $dropdown-selected;
+    }
+  }
+
+  &:hover {
+    background-color: $bg-color-hover;
+  }
+  /* stylelint-disable */
+  &:focus {
+    background-color: $bg-color-hover;
+    outline: none;
+  }
+  /* stylelint-enable */
+  &.disabled {
+    color: $disabled-color;
+    position: relative;
+    cursor: not-allowed;
+    background-color: $bg-color-disabled;
+  }
+
+  .description {
+    display: flex;
+    flex-direction: column;
+
+    &-text {
+      font-weight: $font-weight-600;
+    }
+    &-subText {
+      font-weight: $font-weight-400;
+      font-size: $font-size-12;
+      color: $color-smoke-700;
+    }
+
+    &.icon-margin {
+      margin-inline-start: 18px;
+    }
+
+    &.standard-margin {
+      margin-inline-start: 12px;
+    }
+  }
+
+  .selected-icon {
+    min-width: 20px;
+    min-height: 20px;
+    margin-inline-start: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .checkbox-wrapper {
+    min-width: 22px;
+    min-height: 22px;
+  }
+
+  // FIX: To center the icon inside the host
+  fw-icon {
+    align-items: center;
+    display: flex;
+  }
+}

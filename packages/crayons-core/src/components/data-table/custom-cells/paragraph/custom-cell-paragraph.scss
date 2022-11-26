@@ -1,0 +1,29 @@
+.paragraph-container {
+  position: relative;
+  box-sizing: border-box;
+
+  .paragraph-text {
+    overflow: hidden;
+    margin: 0px;
+  }
+
+  .paragraph-text.expanded {
+    display: inline;
+  }
+
+  .paragraph-toggle {
+    display: inline;
+    text-decoration: none;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    text-align: center;
+    color: $color-azure-800;
+    white-space: nowrap;
+    font-weight: $font-weight-600;
+
+    &:hover,
+    &:focus {
+      cursor: pointer;
+    }
+  }
+}

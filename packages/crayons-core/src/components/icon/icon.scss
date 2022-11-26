@@ -1,0 +1,22 @@
+/**
+  @prop --fw-icon-color: Color of the icon
+  @prop --fw-icon-size: Size of the icon
+*/
+
+:host {
+  display: inline-block;
+}
+
+.icon {
+  display: block;
+  color: var(--fw-icon-color, $color-elephant-900);
+
+  height: var(--fw-icon-size, 12px);
+  width: var(--fw-icon-size, 12px);
+
+  svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+}

@@ -1,0 +1,44 @@
+/**
+  @prop --fw-tabs-width: width of the tab container.
+  @prop --fw-tabs-height: height of the tab container.
+  @prop --fw-tabs-border-block-end: border bottom style of tabs
+  @prop --fw-tabs-margin-inline-start: Left margin if direction is left-to-right, and Right margin if direction is right-to-left for the tab items
+  @prop --fw-tabs-margin-inline-end: Right margin if direction is left-to-right, and Left margin if direction is right-to-left for the tab items
+  @prop --fw-tabs-padding-inline-start: Left padding if direction is left-to-right, and Right padding if direction is right-to-left for the tab items
+  @prop --fw-tabs-padding-inline-end: Right padding if direction is left-to-right, and Left padding if direction is right-to-left for the tab items
+*/
+
+.tabs {
+  display: flex;
+  flex-direction: column;
+  width: var(--fw-tabs-width, 'inherit');
+  height: var(--fw-tabs-height, 'inherit');
+
+  &__items__nav {
+    padding: 0;
+    padding-inline-start: var(--fw-tabs-padding-start, 12px);
+    padding-inline-end: var(--fw-tabs-padding-end, 12px);
+    margin-inline-start: var(--fw-tabs-margin-start, 0);
+    margin-inline-end: var(--fw-tabs-margin-end, 0);
+    display: flex;
+    border-block-end: var(
+      --fw-tabs-border-block-end,
+      1px solid $color-smoke-50
+    );
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    &__box {
+      background-color: $app-header-bg-secondary;
+      border: 1px solid $color-smoke-50;
+      box-sizing: border-box;
+      border-radius: $radius;
+    }
+  }
+
+  &__items__tabs {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+  }
+}

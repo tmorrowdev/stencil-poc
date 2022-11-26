@@ -3,6 +3,90 @@
   "version": 2,
   "projects": {
     "ang-output": "libs/ang-output",
+    "crayons-custom-objects-angular": {
+      "projectType": "library",
+      "root": "libs/crayons-custom-objects-angular",
+      "sourceRoot": "libs/crayons-custom-objects-angular/src",
+      "prefix": "test",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/angular:ng-packagr-lite",
+          "outputs": ["dist/libs/crayons-custom-objects-angular"],
+          "options": {
+            "project": "libs/crayons-custom-objects-angular/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/crayons-custom-objects-angular/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/crayons-custom-objects-angular/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/crayons-custom-objects-angular"],
+          "options": {
+            "jestConfig": "libs/crayons-custom-objects-angular/jest.config.ts",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/crayons-custom-objects-angular/**/*.ts",
+              "libs/crayons-custom-objects-angular/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": []
+    },
+    "custom-objects": {
+      "projectType": "library",
+      "root": "libs/custom-objects",
+      "sourceRoot": "libs/custom-objects/src",
+      "prefix": "test",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/angular:ng-packagr-lite",
+          "outputs": ["dist/libs/custom-objects"],
+          "options": {
+            "project": "libs/custom-objects/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/custom-objects/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/custom-objects/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/custom-objects"],
+          "options": {
+            "jestConfig": "libs/custom-objects/jest.config.ts",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/custom-objects/**/*.ts",
+              "libs/custom-objects/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": []
+    },
     "project-e2e": "apps/project-e2e",
     "stencil": "libs/stencil",
     "stencil-angular": "libs/stencil-angular",

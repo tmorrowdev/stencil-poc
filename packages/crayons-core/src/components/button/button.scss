@@ -1,0 +1,397 @@
+/**
+  @prop --fw-button-min-width: minimum width for the button
+  @prop --fw-button-label-vertical-padding: vertical padding for the button label
+*/
+
+//=== Button Style ===//
+$btn-primary-color: $color-milk;
+$btn-primary-bg: $color-elephant-800;
+$btn-primary-bg-dark: $color-elephant-900;
+$btn-primary-border: $color-elephant-900;
+$btn-primary-border-active: $color-elephant-800;
+
+$btn-primary-disabled-bg: $color-smoke-300;
+$btn-primary-disabled-bg-dark: #7b8e9f;
+$btn-primary-disabled-color: rgba($btn-primary-color, 0.5);
+
+$btn-secondary-color: $text-default;
+$btn-secondary-bg: $color-milk;
+$btn-secondary-bg-dark: $color-smoke-25;
+$btn-secondary-border: $border-color;
+$btn-secondary-border-active: $color-smoke-50;
+$btn-secondary-disabled-bg: $color-smoke-50;
+$btn-secondary-disabled-bg-dark: $color-smoke-100;
+$btn-secondary-disabled-color: $color-smoke-300;
+
+$btn-danger-color: $color-milk;
+$btn-danger-bg: $color-persimmon-800;
+$btn-danger-bg-dark: $color-persimmon-900;
+$btn-danger-border: $color-persimmon-900;
+$btn-danger-disabled-bg: #f89fa1;
+$btn-danger-disabled-bg-dark: #f2797b;
+$btn-danger-disabled-color: rgba($btn-primary-color, 0.5);
+
+$btn-link-color: $color-azure-800;
+$btn-link-bg: $color-smoke-50;
+
+$active-box-shadow: inset 0 0 4px 0 rgba(0, 0, 0, 0.25);
+
+$btn-default-font-size: $font-size-14;
+$btn-small-font-size: $font-size-12;
+$btn-mini-font-size: $font-size-10;
+
+$btn-font-weight: $font-weight-600;
+
+$btn-border-width: 1px;
+$input-height-small: 24px;
+$input-height-normal: 32px;
+$input-height-mini: 16px;
+
+// stylelint-disable a11y/media-prefers-reduced-motion
+@media screen and (prefers-reduced-motion: reduce) {
+  .fw-btn,
+  .fw-btn--label,
+  .fw-btn--loader {
+    transition: none;
+  }
+}
+
+:host {
+  display: inline-block;
+  width: auto;
+  cursor: pointer;
+}
+
+.fw-btn {
+  display: inline-flex;
+  align-content: center;
+  align-items: stretch;
+  justify-content: center;
+  width: 100%;
+  border-style: solid;
+  border-width: $btn-border-width;
+  font-weight: $btn-font-weight;
+  font-family: inherit;
+  text-decoration: none;
+  user-select: none;
+  white-space: nowrap;
+  vertical-align: middle;
+  padding: 0;
+  // transition: all 0.2s ease-in;
+  cursor: inherit;
+  letter-spacing: 0;
+  outline: 0;
+  border-radius: 4px;
+  --fw-icon-color: currentColor;
+
+  .fw-btn--label {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: flex;
+    align-items: center;
+    line-height: $line-height-label;
+  }
+
+  &:active:not(.fw-btn--loading) {
+    box-shadow: $active-box-shadow;
+  }
+
+  &:focus {
+    border: 1px solid $btn-lg-focus-border;
+    box-shadow: 0 0 0 1px $btn-lg-focus-border;
+  }
+
+  &.disabled,
+  &[disabled] {
+    cursor: not-allowed;
+  }
+
+  &--primary {
+    background-color: $btn-primary-bg;
+    color: $btn-primary-color;
+    border-color: $btn-primary-border;
+    background-image: linear-gradient(
+      to bottom,
+      $btn-primary-bg,
+      $btn-primary-bg-dark
+    );
+
+    &:active {
+      border-color: $btn-primary-border-active;
+    }
+
+    &:focus:not([disabled]),
+    &:hover:not([disabled]) {
+      background-color: $btn-primary-bg-dark;
+      background-image: none;
+    }
+
+    &.disabled,
+    &[disabled] {
+      background-image: linear-gradient(
+        to bottom,
+        $btn-primary-disabled-bg,
+        $btn-primary-disabled-bg-dark
+      );
+      border-color: $btn-primary-disabled-bg-dark;
+      color: $btn-primary-disabled-color;
+    }
+  }
+
+  &--secondary {
+    background-color: $btn-secondary-bg-dark;
+    color: $btn-secondary-color;
+    border-color: $btn-secondary-border;
+    background-image: linear-gradient(
+      to bottom,
+      $btn-secondary-bg,
+      $btn-secondary-bg-dark
+    );
+
+    &:active {
+      border-color: $btn-secondary-border-active;
+    }
+
+    &:focus:not([disabled]),
+    &:hover:not([disabled]) {
+      background-color: $btn-secondary-bg-dark;
+      background-image: none;
+    }
+
+    &.disabled,
+    &[disabled] {
+      background: $btn-secondary-disabled-bg;
+      border-color: $btn-secondary-disabled-bg-dark;
+      color: $btn-secondary-disabled-color;
+    }
+  }
+
+  &--danger {
+    color: $btn-danger-color;
+    background-color: $btn-danger-bg;
+    border-color: $btn-danger-border;
+    background-image: linear-gradient(
+      to bottom,
+      $btn-danger-bg,
+      $btn-danger-bg-dark
+    );
+
+    &:focus:not([disabled]),
+    &:hover:not([disabled]) {
+      background-color: $btn-danger-bg-dark;
+      background-image: none;
+    }
+
+    &.disabled,
+    &[disabled] {
+      background-image: linear-gradient(
+        to bottom,
+        $btn-danger-disabled-bg,
+        $btn-danger-disabled-bg-dark
+      );
+      border-color: $btn-danger-disabled-bg-dark;
+      color: rgba($color-milk, 0.5);
+    }
+  }
+
+  &--link {
+    background-color: transparent;
+    background-image: none;
+    border: 1px solid transparent;
+    color: $btn-link-color;
+  }
+
+  &--text {
+    background-color: transparent;
+    background-image: none;
+    border: 1px solid transparent;
+    color: $btn-primary-bg;
+  }
+
+  &--text,
+  &--link {
+    &:focus:not([disabled]) {
+      border-color: $btn-lg-focus-border;
+      box-shadow: 0 0 0 1px $btn-lg-focus-border;
+      background-color: transparent;
+    }
+
+    &:hover:not([disabled]) {
+      background-color: $btn-link-bg;
+    }
+
+    &.disabled,
+    &[disabled] {
+      opacity: 0.5;
+    }
+  }
+
+  &--mini {
+    height: 16px;
+    // line-height: calc(#{$input-height-mini} - #{$btn-border-width} * 2);
+
+    .fw-btn--label {
+      font-size: $btn-mini-font-size;
+    }
+
+    fw-spinner {
+      transform: scale(0.5);
+    }
+  }
+
+  // DS button specification for mini has been referenced within crayons as type small
+  &--small {
+    height: 24px;
+    // line-height: calc(#{$input-height-small} - #{$btn-border-width} * 2);
+
+    .fw-btn--label {
+      font-size: $btn-small-font-size;
+    }
+
+    fw-spinner {
+      transform: scale(0.75);
+    }
+  }
+
+  &--normal {
+    min-width: var(--fw-button-min-width, 80px);
+    height: 32px;
+    // line-height: calc(#{$input-height-normal} - #{$btn-border-width} * 2);
+  }
+
+  &--icon {
+    min-width: 32px;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    // line-height: calc(32px - #{$btn-border-width} * 2);
+  }
+
+  &--icon-small {
+    min-width: 24px;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    // line-height: calc(22px - #{$btn-border-width} * 2);
+  }
+}
+
+.fw-btn--before,
+.fw-btn--after,
+.fw-btn--caret {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.fw-btn--normal ::slotted(fw-icon) {
+  --fw-icon-size: 12px;
+}
+
+.fw-btn--small ::slotted(fw-icon) {
+  --fw-icon-size: 10px;
+}
+
+.fw-btn--mini ::slotted(fw-icon) {
+  --fw-icon-size: 8px;
+}
+
+// Padding and Spacing
+// stylelint-disable
+$sizes: 'normal' 12px 8px, 'small' 8px 6px, 'mini' 6px 4px;
+// stylelint-enable
+
+@each $className, $labelOnlySize, $innerOnlySize in $sizes {
+  .fw-btn--has-label.fw-btn--#{$className} .fw-btn--label {
+    padding-inline: var(--fw-button-label-vertical-padding, #{$labelOnlySize});
+    padding-block: 0;
+  }
+
+  .fw-btn--has-before.fw-btn--#{$className} {
+    padding-inline-start: #{$innerOnlySize};
+  }
+
+  .fw-btn--has-before.fw-btn--#{$className} .fw-btn--label {
+    padding-inline-start: #{$innerOnlySize};
+  }
+
+  .fw-btn--has-after.fw-btn--#{$className},
+  .fw-btn--caret.fw-btn--#{$className} {
+    padding-inline-end: #{$innerOnlySize};
+  }
+
+  .fw-btn--has-after.fw-btn--#{$className} .fw-btn--label,
+  .fw-btn--caret.fw-btn--#{$className} .fw-btn--label {
+    padding-inline-end: #{$innerOnlySize};
+  }
+}
+
+.fw-btn--caret fw-icon {
+  --fw-icon-size: 9px;
+}
+
+.fw-btn--caret.fw-btn--mini fw-icon {
+  --fw-icon-size: 6px;
+}
+
+// Loading button implementation
+.fw-btn--loading {
+  position: relative;
+  cursor: wait;
+
+  .fw-btn--label,
+  .fw-btn--before,
+  .fw-btn--after,
+  .fw-btn--caret {
+    opacity: 0;
+  }
+
+  .fw-btn--loader {
+    --fw-spinner-color: currentColor;
+    opacity: 1;
+    line-height: 0;
+  }
+}
+
+.fw-btn--label,
+.fw-btn--loader {
+  transition: opacity 0.3s ease-out;
+}
+
+.fw-btn--loader {
+  opacity: 0;
+  position: absolute;
+  font-size: 1em;
+  height: 1em;
+  width: 1em;
+  inset-block-start: calc(50% - 0.5em);
+  inset-inline-start: calc(50% - 0.5em);
+  margin-block-start: -1px;
+  margin-inline-start: -1px;
+}
+
+/*
+   * Button groups support a variety of button types (e.g. buttons with tooltips, buttons as dropdown triggers, etc.).
+   * This means buttons aren't always direct descendants of the button group, thus we can't target them with the
+   * ::slotted selector. To work around this, the button group component does some magic to add these special classes to
+   * buttons and we style them here instead.
+*/
+
+:host(.fw-button-group__button--first:not(.fw-button-group__button--last))
+  .fw-btn {
+  border-start-end-radius: 0;
+  border-end-end-radius: 0;
+}
+
+:host(.fw-button-group__button--inner) .fw-btn {
+  border-radius: 0;
+  border-inline-start: 0;
+}
+
+:host(.fw-button-group__button--last:not(.fw-button-group__button--first))
+  .fw-btn {
+  border-start-start-radius: 0;
+  border-end-start-radius: 0;
+  border-inline-start: 0;
+}

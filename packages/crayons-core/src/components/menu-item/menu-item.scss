@@ -1,0 +1,76 @@
+/**
+  @prop --fw-menu-item-background: Border of the fw-menu-item popover content.
+  @prop --fw-menu-item-border: Border of the fw-menu-item popover content.
+  @prop --fw-menu-item-box-shadow: Box Shadow of the fw-menu-item popover content.
+  @prop --fw-menu-item-border-radius: Border Radius of the fw-menu-item popover content.
+*/
+
+.menu-item {
+  cursor: pointer;
+  display: flex;
+  padding-inline: 8px;
+  padding-block: 6px;
+  margin-block-end: 4px;
+  line-height: 1.45;
+  align-items: center;
+  background: var(--fw-menu-item-background, #ffffff);
+  border: var(--fw-menu-item-border);
+  box-shadow: var(--fw-menu-item-box-shadow);
+  border-radius: var(--fw-menu-item-border-radius);
+  font-size: $font-size-14;
+  word-break: break-word;
+  word-wrap: break-word;
+
+  &:hover {
+    background-color: $color-smoke-50;
+  }
+  &:focus {
+    background-color: $color-smoke-50;
+    outline: $color-azure-800 auto 1px;
+  }
+
+  .menu-item__label {
+    flex: 1 1 auto;
+  }
+
+  .menu-item__prefix {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+
+    ::slotted(*) {
+      margin-inline-end: 8px;
+    }
+  }
+
+  .menu-item__suffix {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    ::slotted(*) {
+      margin-inline-start: 8px;
+    }
+  }
+
+  .menu-item__check {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+  }
+
+  &.selected {
+    font-weight: $font-weight-600;
+    background-color: $dropdown-selected;
+    &:hover,
+    &:focus {
+      background-color: $dropdown-selected;
+    }
+
+    .menu-item__check {
+      visibility: visible;
+    }
+  }
+}

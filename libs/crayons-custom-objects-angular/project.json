@@ -1,0 +1,41 @@
+{
+  "projectType": "library",
+  "sourceRoot": "libs/crayons-custom-objects-angular/src",
+  "prefix": "ds",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:package",
+      "outputs": ["dist/libs/crayons-custom-objects-angular"],
+      "options": {
+        "project": "libs/crayons-custom-objects-angular/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/crayons-custom-objects-angular/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/crayons-custom-objects-angular/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/crayons-custom-objects-angular"],
+      "options": {
+        "jestConfig": "libs/crayons-custom-objects-angular/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/crayons-custom-objects-angular/**/*.ts",
+          "libs/crayons-custom-objects-angular/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

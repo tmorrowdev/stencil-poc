@@ -6,6 +6,10 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface DsAccordian {
+        "panelBody": any;
+        "panelTitle": string;
+    }
     interface DsButton {
         "disabled": boolean;
         /**
@@ -37,6 +41,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLDsAccordianElement extends Components.DsAccordian, HTMLStencilElement {
+    }
+    var HTMLDsAccordianElement: {
+        prototype: HTMLDsAccordianElement;
+        new (): HTMLDsAccordianElement;
+    };
     interface HTMLDsButtonElement extends Components.DsButton, HTMLStencilElement {
     }
     var HTMLDsButtonElement: {
@@ -50,11 +60,16 @@ declare global {
         new (): HTMLMyComponentElement;
     };
     interface HTMLElementTagNameMap {
+        "ds-accordian": HTMLDsAccordianElement;
         "ds-button": HTMLDsButtonElement;
         "my-component": HTMLMyComponentElement;
     }
 }
 declare namespace LocalJSX {
+    interface DsAccordian {
+        "panelBody"?: any;
+        "panelTitle"?: string;
+    }
     interface DsButton {
         "disabled"?: boolean;
         /**
@@ -85,6 +100,7 @@ declare namespace LocalJSX {
         "middle"?: string;
     }
     interface IntrinsicElements {
+        "ds-accordian": DsAccordian;
         "ds-button": DsButton;
         "my-component": MyComponent;
     }
@@ -93,6 +109,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "ds-accordian": LocalJSX.DsAccordian & JSXBase.HTMLAttributes<HTMLDsAccordianElement>;
             "ds-button": LocalJSX.DsButton & JSXBase.HTMLAttributes<HTMLDsButtonElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
         }

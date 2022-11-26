@@ -5,7 +5,7 @@ import {  DIRECTIVES } from './generated/directives';
 
 
 @NgModule({
-  declarations: [DIRECTIVES],
+  declarations: [...DIRECTIVES],
   imports: [
     CommonModule,
   ],

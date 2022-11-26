@@ -1,0 +1,87 @@
+/**
+ * @prop --fw-skeleton-height: Skeleton height: Default: 16px for the text and rect, 32px for the circle
+ * @prop --fw-skeleton-width: Skeleton width: Default: 100% for the text and rect, 32px for the circle
+ * @prop --fw-skeleton-margin-bottom: Skeleton margin-bottom: Default: 8px/0px(when count is 1)
+ * @prop --fw-skeleton-border-radius: Skeleton border-radius: Default: 999px for the text, 50% for the circle, 0px for the rect
+ * @prop --fw-skeleton-background: Skeleton background: Default: #cfd7df
+ * @prop --fw-skeleton-sheen-color: Skeleton Sheen effect color: Default: #b1bdc8
+ */
+
+.skeleton {
+  box-sizing: border-box;
+  outline: none;
+  overflow: hidden;
+  position: relative;
+  background: var(--fw-skeleton-background, $color-smoke-100);
+  border-radius: var(--fw-skeleton-border-radius, 999px);
+  width: var(--fw-skeleton-width, 100%);
+  height: var(--fw-skeleton-height, 16px);
+  display: block;
+  margin-block-end: var(--fw-skeleton-margin-bottom, 8px);
+  will-change: auto;
+
+  &:after,
+  &:before {
+    box-sizing: border-box;
+  }
+
+  &.circle {
+    width: var(--fw-skeleton-width, 32px);
+    height: var(--fw-skeleton-height, 32px);
+    margin-block-end: var(--fw-skeleton-margin-bottom, 8px);
+    border-radius: var(--fw-skeleton-border-radius, 50%);
+  }
+
+  &.rect {
+    border-radius: var(--fw-skeleton-border-radius, 0px);
+  }
+
+  &.only {
+    margin-block-end: var(--fw-skeleton-margin-bottom, 0px);
+  }
+
+  // stylelint-disable a11y/media-prefers-reduced-motion
+  @media (prefers-reduced-motion: reduce) {
+    &.pulse,
+    &.sheen {
+      animation: none;
+    }
+  }
+
+  &.pulse {
+    animation: pulse 2s ease-in-out 0.5s infinite;
+  }
+
+  &.sheen {
+    background: linear-gradient(
+      270deg,
+      var(--fw-skeleton-sheen-color, $color-smoke-200),
+      var(--fw-skeleton-background, $color-smoke-100),
+      var(--fw-skeleton-background, $color-smoke-100),
+      var(--fw-skeleton-sheen-color, $color-smoke-200)
+    );
+
+    animation: sheen 8s ease-in-out infinite;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes sheen {
+  0% {
+    background-position: 200% 0;
+  }
+  to {
+    background-position: -200% 0;
+  }
+}
