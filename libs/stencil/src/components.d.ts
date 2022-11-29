@@ -82,9 +82,12 @@ declare global {
     };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
+
+    interface HTMLTextInputElement extends Components.TextInput, HTMLStencilElement {
+    }
+    var HTMLTextInputElement: {
+        prototype: HTMLTextInputElement;
+        new (): HTMLTextInputElement;
     };
     interface HTMLTextInputElement extends Components.TextInput, HTMLStencilElement {
     }

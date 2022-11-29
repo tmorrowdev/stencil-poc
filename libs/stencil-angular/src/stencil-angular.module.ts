@@ -1,15 +1,13 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { NgModule } from "@angular/core";
+import {CommonModule} from '@angular/common';
+import { DIRECTIVES } from "./generated/directives";
 
-import {DIRECTIVES} from './generated/directives';
-import { defineCustomElements } from '@wc/stencil/loader';
 
-defineCustomElements();
 @NgModule({
-  declarations: [...DIRECTIVES],
   imports: [
     CommonModule,
   ],
+  declarations: [...DIRECTIVES],
   exports: [...DIRECTIVES]
 })
-export class StencilAngularModule { }
+export class StencilAngularModule{}

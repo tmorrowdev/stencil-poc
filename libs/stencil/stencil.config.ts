@@ -26,7 +26,7 @@ setPluginConfigurationDefaults({
   }
 });
 export const config: Config = {
-  
+
   namespace: 'stencil',
   taskQueue: 'async',
   plugins: [

@@ -2,6 +2,9 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
+    "ang-output": "libs/ang-output",
+    "project-e2e": "apps/project-e2e",
+    "react-test": "libs/react-test",
     "stencil": "libs/stencil",
     "stencil-angular": "libs/stencil-angular",
     "stencil-angular-e2e": "apps/stencil-angular-e2e",

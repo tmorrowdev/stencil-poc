@@ -1,7 +1,16 @@
-# stencil-react
+# stencil-ds-react-template
 
-This library was generated with [Nx](https://nx.dev).
+This is an example repo of building plugins.
 
-## Running unit tests
+## Step 1.
 
-Run `nx test stencil-react` to execute the unit tests via [Jest](https://jestjs.io).
+- Update the `package.json` to have the correct package name for this repo.
+- Replace `component-library` under `dependencies` with your core stencil package name.
+
+## Step 2.
+
+- Build your core stencil package.
+
+## Step 3.
+
+- Run build on this package.

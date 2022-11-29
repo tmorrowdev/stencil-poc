@@ -1,6 +1,31 @@
-<ds-button type="secondary" size="large" width="auto" [disabled]="false">I'm a Button</ds-button>
-<ds-button type="primary" size="large" width="auto"  [disabled]="false">I'm a Button</ds-button>
-  <text-input></text-input>
-  <ds-accordion color="blue" description="Content that goes in the accordion" title="Select me"></ds-accordion>
-  <ds-table [headers]="headers"><tr><td>hi</td><td>hi</td><td>hi</td></tr></ds-table>
-<ds-card subtitle="Card Subtitle" cardTitle="Card Title"></ds-card>
+<div>
+
+<div class="button-large-auto">
+<ds-button type="primary" size="large" width="auto" [disabled]="false">Button</ds-button>
+<ds-button type="secondary" size="large" width="auto" [disabled]="false">Button</ds-button>
+<ds-button type="tertiary" size="large" width="auto" [disabled]="false">Button</ds-button>
+<ds-button type="primary" size="large" width="auto" [disabled]="true">Button</ds-button>
+
+</div>
+<div class="button-small-auto">
+  <ds-button type="primary" size="small" width="auto" [disabled]="false">Button</ds-button>
+  <ds-button type="secondary" size="small" width="auto" [disabled]="false">Button</ds-button>
+  <ds-button type="tertiary" size="small" width="auto" [disabled]="false">Button</ds-button>
+  <ds-button type="primary" size="small" width="auto" [disabled]="true">Button</ds-button>
+
+</div>
+<div class="button-large-full">
+  <ds-button type="primary" size="large" width="full" [disabled]="false">Button</ds-button>
+  <ds-button type="secondary" size="large" width="full" [disabled]="false">Button</ds-button>
+  <ds-button type="tertiary" size="large" width="full" [disabled]="false">Button</ds-button>
+  <ds-button type="primary" size="large" width="full" [disabled]="true">Button</ds-button>
+
+  </div>
+  <div class="button-small-full">
+    <ds-button type="primary" size="small" width="full" [disabled]="false">Button</ds-button>
+    <ds-button type="secondary" size="small" width="full" [disabled]="false">Button</ds-button>
+    <ds-button type="tertiary" size="small" width="full" [disabled]="false">Button</ds-button>
+    <ds-button type="primary" size="small" width="full" disabled>Button</ds-button>
+
+  </div>
+</div>
