@@ -1,10 +1,10 @@
 {
   "projectType": "library",
   "sourceRoot": "libs/stencil-angular/src",
-  "prefix": "test",
+  "prefix": "dst",
   "targets": {
     "build": {
-      "executor": "@nrwl/angular:package",
+      "executor": "@nrwl/angular:ng-packagr-lite",
       "outputs": ["dist/libs/stencil-angular"],
       "options": {
         "project": "libs/stencil-angular/ng-package.json"

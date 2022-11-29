@@ -1,0 +1,115 @@
+@import "../variables";
+@import "../accredo";
+@import "../pharmacy";
+//
+$colors-accredo-accent-yellow-20: #fff5d6;
+ $colors-accredo-accent-yellow-40: #ffebae;
+ $colors-accredo-accent-yellow-60: #ffe185;
+ $colors-accredo-accent-yellow-80: #ffd75d;
+ $colors-accredo-accent-yellow-100: #ffcd34;
+ $colors-accredo-dark-green: #007c89;
+ $colors-accredo-green: #15a4a7;
+ $colors-accredo-light-green: #a1dbdc;
+ $colors-accredo-limited-blue: #009bdf;
+ $colors-accredo-limited-green: #99ca3c;
+ $colors-accredo-limited-light-blue: #addbf0;
+ $colors-accredo-limited-pink: #db5899;
+ $colors-accredo-limited-purple: #973894;
+ $colors-accredo-shade-dark-green-20: #cce5e7;
+ $colors-accredo-shade-dark-green-40: #99cbd0;
+ $colors-accredo-shade-dark-green-60: #66b0b8;
+ $colors-accredo-shade-dark-green-80: #3396a1;
+ $colors-accredo-shade-dark-green-150: #005b69;
+ $colors-accredo-shade-green-20: #d0eded;
+ $colors-accredo-shade-green-40: $colors-accredo-light-green;
+ $colors-accredo-shade-green-60: #73c8ca;
+ $colors-accredo-shade-green-80: #44b6b9;
+ $colors-accredo-shade-green-150: #0b878a;
+ $colors-accredo-shade-light-green-20: #ecf8f8;
+ $colors-accredo-shade-light-green-40: #d9f1f1;
+ $colors-accredo-shade-light-green-60: #c7e9ea;
+ $colors-accredo-shade-light-green-80: #b4e2e3;
+ $colors-accredo-shade-light-green-150: #83cbcd;
+ $colors-pharmacy-dark-blue: #132342;
+$colors-pharmacy-gray: #ececec;
+$colors-pharmacy-green: #69ca90;
+$colors-pharmacy-light-blue: #2ca6ff;
+$colors-pharmacy-orange: #ef6f3a;
+$colors-pharmacy-white: #ffffff;
+$colors-pharmacy-yellow: #f9dd71;
+$colors-pharmacy-shade-dark-blue-90: #172A4F;
+$colors-pharmacy-shade-dark-blue-150: #0f1b33;
+$colors-pharmacy-shade-dark-blue-170: #0E192F;
+$colors-pharmacy-shade-light-blue-40: #addbf0;
+$colors-pharmacy-shade-light-blue-150: #0079d2;
+$colors-pharmacy-shade-yellow-150: #f5c600;
+$colors-evernorth-accent-blue-darkest: #0000da;
+$colors-evernorth-accent-blue-standard: #0033ff;
+$colors-evernorth-dark-mint: #69c89e;
+$colors-evernorth-light-mint: #3effc0;
+$colors-evernorth-mint: #00eda0;
+$colors-evernorth-shade-light-mint-15: #e2fff6;
+$colors-evernorth-shade-light-mint-30: #c4ffec;
+$colors-evernorth-shade-light-mint-50: #9dffdf;
+$colors-evernorth-shade-light-mint-70: #76ffd3;
+$colors-esrx-accent-orange-20: #fee2cd;
+$colors-esrx-accent-orange-40: #fcc49b;
+$colors-esrx-accent-orange-60: #fba76a;
+$colors-esrx-accent-orange-80: #f98938;
+$colors-esrx-accent-orange-100: #f86c06;
+$colors-esrx-blue: #009bdf;
+$colors-esrx-dark-blue: #14568d;
+$colors-esrx-light-blue: #addbf0;
+$colors-esrx-limited-green: #99ca3c;
+$colors-esrx-limited-pink: #db5899;
+$colors-esrx-limited-purple: #973894;
+$colors-esrx-limited-teal: #15a4a7;
+$colors-esrx-limited-yellow: #ffcd34;
+$colors-esrx-shade-blue-20: #ccebf9;
+$colors-esrx-shade-blue-40: #99d7f2;
+$colors-esrx-shade-blue-60: #66c3ec;
+$colors-esrx-shade-blue-80: #33afe5;
+$colors-esrx-shade-blue-150: #0088d7;
+$colors-esrx-shade-dark-blue-20: #d0dde8;
+$colors-esrx-shade-dark-blue-40: #a1bbd1;
+$colors-esrx-shade-dark-blue-60: #729abb;
+$colors-esrx-shade-dark-blue-80: #4378a4;
+$colors-esrx-shade-dark-blue-150: #073b64;
+$colors-esrx-shade-light-blue-20: #eff8fc;
+$colors-esrx-shade-light-blue-40: #def1f9;
+$colors-esrx-shade-light-blue-60: #ccebf9;
+$colors-esrx-shade-light-blue-80: #bde2f3;
+$colors-esrx-shade-light-blue-150: #91cbe9;
+@mixin atTheme($theme: 'accredo'){
+  $selector: #{'button'};
+  @at-root body.#{$theme}-theme #{$selector}{
+
+@content
+  }
+};
+
+@mixin atTheme($theme: 'pharmacy'){
+  $selector: #{'button'};
+  @at-root body.#{$theme}-theme #{$selector}{
+    @content
+
+
+
+
+  }
+  }
+  @mixin atTheme($theme: 'evernorth'){
+    $selector: #{'button'};
+    @at-root body.#{$theme}-theme #{$selector}{
+      @content
+
+
+
+
+    }
+    }
+
+
+
+
+

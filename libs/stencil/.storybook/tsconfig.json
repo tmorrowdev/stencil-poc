@@ -1,0 +1,11 @@
+{
+  "extends": "../tsconfig.json",
+  "include": [
+    "main.ts",
+    "preview.ts",
+    "**/*.stories.js",
+    "**/*.stories.ts",
+    "**/*.stories.jsx",
+    "**/*.stories.tsx"
+  ]
+}

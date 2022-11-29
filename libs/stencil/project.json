@@ -1,4 +1,5 @@
 {
+  "name": "stencil",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/stencil/src",
   "projectName": "stencil",
@@ -27,7 +28,11 @@
         "projectType": "library",
         "tsConfig": "libs/stencil/tsconfig.lib.json",
         "configPath": "libs/stencil/stencil.config.ts",
-        "outputPath": "dist/libs/stencil"
+        "outputPath": "dist/libs/stencil",
+        "assets": ["libs/stencil/src/components/styles"],
+        "stylePreprocessorOptions": {
+          "includePaths": ["libs/stencil/src/components/styles"]
+        }
       },
       "configurations": {
         "production": {
@@ -61,6 +66,52 @@
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": "libs/stencil/**/*.{ts,tsx}"
+      }
+    },
+    "storybook": {
+      "executor": "@nrwl/storybook:storybook",
+      "options": {
+        "uiFramework": "@storybook/web-components",
+        "port": 4400,
+        "config": {
+          "configFolder": "libs/stencil/.storybook"
+        }
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "serve-storybook": {
+      "executor": "@nrwl/storybook:storybook",
+      "options": {
+        "uiFramework": "@storybook/html",
+        "port": 4400,
+        "config": {
+          "configFolder": "libs/stencil/.storybook"
+        }
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "build-storybook": {
+      "executor": "@nrwl/storybook:build",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "uiFramework": "@storybook/web-components",
+        "outputPath": "dist/storybook/stencil",
+        "config": {
+          "configFolder": "libs/stencil/.storybook"
+        }
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
       }
     }
   }

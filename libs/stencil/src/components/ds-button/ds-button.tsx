@@ -34,13 +34,15 @@ export class DsButton {
 
     return (
       <button type={this.type} class={classMap} onClick={this.handleClick} disabled={this.disabled}>
-        <slot />
+        <slot/>
+
       </button>
     );
   }
 
   private getCssClassMap(): CssClassMap {
     return {
+
       [this.type]: true,
       [this.size]: true,
       [this.width]: true

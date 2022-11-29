@@ -10,8 +10,38 @@
   <script nomodule src="/build/stencil.js"></script>
 </head>
 
-<body>
-  <ds-button type="primary" size="large" width="auto"  [disabled]="false">I'm a Button</ds-button>
-</body>
+<body class="accredo-theme">
+  <div>
+
+    <div class="button-large-auto">
+    <ds-button type="primary" size="large" width="auto" [disabled]="false">Button</ds-button><ds-icon icon="edit" position="end"></ds-icon>
+    <ds-button type="secondary" size="large" width="auto" [disabled]="false">Button</ds-button>
+    <ds-button type="tertiary" size="large" width="auto" [disabled]="false">Button</ds-button>
+    <ds-button type="primary" size="large" width="auto" [disabled]="true">Button</ds-button>
+
+    </div>
+    <div class="button-small-auto">
+      <ds-button type="primary" size="small" width="auto" [disabled]="false">Button</ds-button>
+      <ds-button type="secondary" size="small" width="auto" [disabled]="false">Button</ds-button>
+      <ds-button type="tertiary" size="small" width="auto" [disabled]="false">Button</ds-button>
+      <ds-button type="primary" size="small" width="auto" [disabled]="true">Button</ds-button>
+
+    </div>
+    <div class="button-large-full">
+      <ds-button type="primary" size="large" width="full" [disabled]="false">Button</ds-button>
+      <ds-button type="secondary" size="large" width="full" [disabled]="false">Button</ds-button>
+      <ds-button type="tertiary" size="large" width="full" [disabled]="false">Button</ds-button>
+      <ds-button type="primary" size="large" width="full" [disabled]="true">Button</ds-button>
+
+      </div>
+      <div class="button-small-full">
+        <ds-button type="primary" size="small" width="full" [disabled]="false">Button</ds-button>
+        <ds-button type="secondary" size="small" width="full" [disabled]="false">Button</ds-button>
+        <ds-button type="tertiary" size="small" width="full" [disabled]="false">Button</ds-button>
+        <ds-button type="primary" size="small" width="full" disabled>Button</ds-button>
+
+      </div>
+    </div>
+    </body>
 
 </html>

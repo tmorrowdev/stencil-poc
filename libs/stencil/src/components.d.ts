@@ -21,19 +21,9 @@ export namespace Components {
          */
         "width": 'auto' | 'full';
     }
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
+    interface DsIcon {
+        "icon": string;
+        "position": 'start' | 'end';
     }
 }
 declare global {
@@ -43,15 +33,15 @@ declare global {
         prototype: HTMLDsButtonElement;
         new (): HTMLDsButtonElement;
     };
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+    interface HTMLDsIconElement extends Components.DsIcon, HTMLStencilElement {
     }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
+    var HTMLDsIconElement: {
+        prototype: HTMLDsIconElement;
+        new (): HTMLDsIconElement;
     };
     interface HTMLElementTagNameMap {
         "ds-button": HTMLDsButtonElement;
-        "my-component": HTMLMyComponentElement;
+        "ds-icon": HTMLDsIconElement;
     }
 }
 declare namespace LocalJSX {
@@ -70,23 +60,13 @@ declare namespace LocalJSX {
          */
         "width"?: 'auto' | 'full';
     }
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
+    interface DsIcon {
+        "icon"?: string;
+        "position"?: 'start' | 'end';
     }
     interface IntrinsicElements {
         "ds-button": DsButton;
-        "my-component": MyComponent;
+        "ds-icon": DsIcon;
     }
 }
 export { LocalJSX as JSX };
@@ -94,7 +74,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "ds-button": LocalJSX.DsButton & JSXBase.HTMLAttributes<HTMLDsButtonElement>;
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "ds-icon": LocalJSX.DsIcon & JSXBase.HTMLAttributes<HTMLDsIconElement>;
         }
     }
 }

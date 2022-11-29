@@ -15,14 +15,17 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@stencil/angular": ["dist/libs/stencil-angular"],
-      "@stencil/react": ["libs/stencil-react/src/index.ts"],
-      "@test/other/*": ["dist/libs/other/dist/components/*"],
-      "@test/other/loader": ["dist/libs/other/loader"],
-      "@wc/angular": ["libs/stencil-angular/src/index.ts"],
-      "@wc/stencil": ["dist/libs/stencil"],
+      "@dst/angular": ["libs/stencil-angular/src/index.ts"],
+      "@dst/react": ["libs/stencil-react/src/index.ts"],
+      "@wc/react": ["libs/react-test/src/index.ts"],
+      "@wc/stencil": ["dist/libs/stencil/"],
       "@wc/stencil/loader": ["dist/libs/stencil/loader"]
     }
   },
-  "exclude": ["node_modules", "tmp"]
+  "exclude": ["node_modules", "tmp"],
+  "references": [
+    {
+      "path": "./.storybook/tsconfig.json"
+    }
+  ]
 }
