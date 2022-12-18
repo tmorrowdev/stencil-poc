@@ -21,10 +21,7 @@ export namespace Components {
          */
         "width": 'auto' | 'full';
     }
-    interface DsIcon {
-        "icon": string;
-        "position": 'start' | 'end';
-    }
+
 }
 declare global {
     interface HTMLDsButtonElement extends Components.DsButton, HTMLStencilElement {
@@ -33,15 +30,11 @@ declare global {
         prototype: HTMLDsButtonElement;
         new (): HTMLDsButtonElement;
     };
-    interface HTMLDsIconElement extends Components.DsIcon, HTMLStencilElement {
-    }
-    var HTMLDsIconElement: {
-        prototype: HTMLDsIconElement;
-        new (): HTMLDsIconElement;
-    };
+
+
     interface HTMLElementTagNameMap {
         "ds-button": HTMLDsButtonElement;
-        "ds-icon": HTMLDsIconElement;
+        "table-component": HTMLTableComponentElement;
     }
 }
 declare namespace LocalJSX {
@@ -60,13 +53,9 @@ declare namespace LocalJSX {
          */
         "width"?: 'auto' | 'full';
     }
-    interface DsIcon {
-        "icon"?: string;
-        "position"?: 'start' | 'end';
-    }
+
     interface IntrinsicElements {
         "ds-button": DsButton;
-        "ds-icon": DsIcon;
     }
 }
 export { LocalJSX as JSX };
@@ -74,7 +63,6 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "ds-button": LocalJSX.DsButton & JSXBase.HTMLAttributes<HTMLDsButtonElement>;
-            "ds-icon": LocalJSX.DsIcon & JSXBase.HTMLAttributes<HTMLDsIconElement>;
         }
     }
 }

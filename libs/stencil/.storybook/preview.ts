@@ -3,7 +3,7 @@ import {
   registerHost,
   getHostRef,
 } from '@stencil/core/internal/client';
-import { defineCustomElements } from '@test/stencil/loader';
+import { defineCustomElements } from '@wc/stencil/loader';
 
 defineCustomElements();
 

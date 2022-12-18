@@ -1,0 +1,41 @@
+{
+  "projectType": "library",
+  "sourceRoot": "libs/angular/shared/src",
+  "prefix": "test",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:ng-packagr-lite",
+      "outputs": ["dist/libs/angular/shared"],
+      "options": {
+        "project": "libs/angular/shared/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/angular/shared/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/angular/shared/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/angular/shared"],
+      "options": {
+        "jestConfig": "libs/angular/shared/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/angular/shared/**/*.ts",
+          "libs/angular/shared/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}
