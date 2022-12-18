@@ -15,6 +15,19 @@
 | `width`    | `width`    | Whether the button has fixed or autosized with | `"auto" \| "full"`                       | `undefined` |
 
 
+## Dependencies
+
+### Used by
+
+ - [text-input](../text-input)
+
+### Graph
+```mermaid
+graph TD;
+  text-input --> ds-button
+  style ds-button fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

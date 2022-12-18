@@ -1,1 +1,53 @@
 /* You can add global styles to this file, and also import other style files */
+form {
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+}
+
+input[type="text"] {
+    padding: 8px 24px;
+}
+
+label {
+    display: block;
+    flex-direction: row;
+    text-overflow: clip;
+}
+
+form {}
+
+.input {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: baseline;
+    height: fit-content;
+}
+
+.content-box.open {
+    box-shadow: 1px 2px 0 4px #d0d1d1 !important;
+}
+open {
+    display: block;
+    height: auto;
+    width: 200px;
+    box-shadow: 1px 2px 4px 0px #d0d1d1 !important;
+    border: 0.5px solid rgb(199, 197, 197);
+    padding: 18px;
+    border-radius: 4px !important;
+}
+
+p {
+}
+
+ds-button button {
+    color: white !important;
+    font-size: 20px;
+    font-family: "Rubik", sans-serif;
+    padding: 9px 24px;
+    box-shadow: none !important;
+    border: none;
+}

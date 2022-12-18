@@ -9,6 +9,7 @@
     "moduleResolution": "node",
     "module": "esnext",
     "target": "es2020",
+    "composite": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "jsx": "react",
@@ -20,6 +21,9 @@
     },
     {
       "path": "./tsconfig.spec.json"
+    },
+    {
+      "path": "./.storybook/tsconfig.json"
     }
   ]
 }

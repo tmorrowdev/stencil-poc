@@ -1,4 +1,5 @@
 {
+  "name": "stencil-angular",
   "projectType": "library",
   "sourceRoot": "libs/stencil-angular/src",
   "prefix": "test",
@@ -34,6 +35,35 @@
           "libs/stencil-angular/**/*.ts",
           "libs/stencil-angular/**/*.html"
         ]
+      }
+    },
+    "storybook": {
+      "executor": "@storybook/angular:start-storybook",
+      "options": {
+        "port": 4400,
+        "configDir": "libs/stencil-angular/.storybook",
+        "browserTarget": "stencil-angular:build-storybook",
+        "compodoc": false
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "build-storybook": {
+      "executor": "@storybook/angular:build-storybook",
+      "outputs": ["{options.outputDir}"],
+      "options": {
+        "outputDir": "dist/storybook/stencil-angular",
+        "configDir": "libs/stencil-angular/.storybook",
+        "browserTarget": "stencil-angular:build-storybook",
+        "compodoc": false
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
       }
     }
   },
