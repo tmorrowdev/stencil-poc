@@ -28,7 +28,11 @@
         "projectType": "library",
         "tsConfig": "libs/stencil/tsconfig.lib.json",
         "configPath": "libs/stencil/stencil.config.ts",
-        "outputPath": "dist/libs/stencil"
+        "outputPath": "dist/libs/stencil",
+        "assets": ["libs/stencil/src/components/styles"],
+        "stylePreprocessorOptions": {
+          "includePaths": ["libs/stencil/src/components/styles"]
+        }
       },
       "configurations": {
         "production": {

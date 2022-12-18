@@ -38,14 +38,12 @@ export const config: StorybookConfig = {
 
     // Make whatever fine-grained changes you need
     const tsPaths = new TsconfigPathsPlugin({
-      configFile: './tsconfig.base.json',
-      extensions: resolve.extensions,
-      mainFields: resolve.mainFields as string[],
+      configFile: '../tsconfig.base.json',
     });
 
-    resolve.plugins
-      ? resolve.plugins.push(tsPaths)
-      : (resolve.plugins = [tsPaths]);
+    // resolve.plugins
+    //   ? resolve.plugins.push(tsPaths)
+    //   : (resolve.plugins = [tsPaths]);
 
     module?.rules?.forEach((rule: RuleSetRule | '...') => {
       // modify all 'babel-loader' occurrences by setting rootMode to 'upward'. this is needed in

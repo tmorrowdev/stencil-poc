@@ -19,7 +19,6 @@
       "@stencil/react": ["libs/stencil-react/src/index.ts"],
       "@test/other/*": ["dist/libs/other/dist/components/*"],
       "@test/other/loader": ["dist/libs/other/loader"],
-      "@wc/angular": ["libs/stencil-angular/src/index.ts"],
 
       "@wc/stencil": ["dist/libs/stencil"],
       "@wc/stencil/loader": ["dist/libs/stencil/loader"]

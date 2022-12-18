@@ -184,13 +184,13 @@ button {
   &.emphasized.small {
     background: $colors-pharmacy-yellow;
     border-color: $colors-pharmacy-yellow;
-    color: $colors-pharmacy-yellow;
+    color: $colors-grayscale-darkest;
     &:active,
     &:hover,
     &:focus {
       background: $colors-pharmacy-shade-yellow-150;
       border-color: $colors-pharmacy-shade-yellow-150;
-      color: $colors-grayscale-darker;
+      color: $colors-grayscale-darkest;
     }
     &:focus {
       outline: thick double $colors-pharmacy-shade-yellow-150;
@@ -204,6 +204,7 @@ button {
       }
     }
   }
+
   &.primary.large {
     background: $colors-pharmacy-dark-blue;
     border-color: $colors-pharmacy-dark-blue;
