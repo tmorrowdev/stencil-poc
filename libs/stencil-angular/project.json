@@ -2,7 +2,7 @@
   "name": "stencil-angular",
   "projectType": "library",
   "sourceRoot": "libs/stencil-angular/src",
-  "prefix": "dst",
+  "prefix": "ds",
   "targets": {
     "build": {
       "executor": "@nrwl/angular:ng-packagr-lite",
@@ -52,7 +52,7 @@
       }
     },
     "build-storybook": {
-      "executor": "@storybook/angular:build-storybook",
+      "executor": "@storybook/builder-webpack5:build",
       "outputs": ["{options.outputDir}"],
       "options": {
         "outputDir": "dist/storybook/stencil-angular",

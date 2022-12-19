@@ -1,8 +1,9 @@
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { Component } from 'react';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import styles from './app.module.scss';
-import { DsButton } from '@dst/react';
+import { DsButton } from '@stencil/react';
 import { defineCustomElements } from '@wc/stencil/loader';
 defineCustomElements();
 export function App() {

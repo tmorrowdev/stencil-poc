@@ -5,6 +5,15 @@
 		}
 	],
 	"settings": {
-		"typescript.tsdk": "node_modules/typescript/lib"
+		"typescript.tsdk": "node_modules/typescript/lib",
+    "nxConsole.commonNxCommands": [
+        "run-many",
+        "affected",
+        "affected:graph",
+        "list",
+        "migrate",
+        "add-dependency",
+        "add-dev-dependency"
+    ]
 	}
 }

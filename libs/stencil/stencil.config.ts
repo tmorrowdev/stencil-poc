@@ -2,7 +2,6 @@ import { Config } from '@stencil/core';
 
 import { sass } from '@stencil/sass';
 
-const angularValueAccessorBindings: ValueAccessorConfig[] = [];
 
 import {
   angularOutputTarget,
@@ -13,15 +12,15 @@ import { reactOutputTarget } from '@stencil/react-output-target';
 import tailwind, { tailwindGlobal, tailwindHMR, setPluginConfigurationDefaults } from 'stencil-tailwind-plugin';
 import tailwindcss from 'tailwindcss';
 import tailwindConf from './tailwind.config';
-import autoprefixer from 'autoprefixer';
+
+const angularValueAccessorBindings: ValueAccessorConfig[] = [];
 
 setPluginConfigurationDefaults({
   tailwindConf,
   tailwindCssPath: './src/styles/tailwind.css',
   postcss: {
     plugins: [
-      tailwindcss(),
-      autoprefixer()
+      tailwindcss()
     ]
   }
 });
@@ -52,7 +51,7 @@ export const config: Config = {
     },
 
     angularOutputTarget({
-      componentCorePackage: '@wc/stencil',
+      componentCorePackage: '@stencil/stencil',
       directivesProxyFile:
         'libs/stencil-angular/src/generated/directives/proxies.ts',
       directivesArrayFile:
@@ -61,7 +60,7 @@ export const config: Config = {
     }),
 
     reactOutputTarget({
-      componentCorePackage: '@wc/stencil',
+      componentCorePackage: '@stencil/stencil',
       proxiesFile: 'libs/stencil-react/src/generated/components.ts',
       includeDefineCustomElements: true,
     }),

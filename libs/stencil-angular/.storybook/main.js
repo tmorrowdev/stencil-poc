@@ -6,7 +6,7 @@ module.exports = {
   stories: [
     ...rootMain.stories,
     '../**/*.stories.mdx',
-    '../**/*.stories.@(js|jsx|ts|tsx)',
+    '../**/*.stories.@(ts|tsx)',
   ],
   addons: [...rootMain.addons],
   webpackFinal: async (config, { configType }) => {
