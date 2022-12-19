@@ -39,5 +39,4 @@ testem.log
 Thumbs.db
 
 .angular
-libs/stencil-angular/**/generated
-libs/stencil-react/**/generated
+
