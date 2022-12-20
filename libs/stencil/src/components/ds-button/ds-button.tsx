@@ -7,7 +7,7 @@ import { CssClassMap } from '../../utils/utils';
   scoped: true,
 })
 export class DsButton {
-  @Prop() label: string = 'Click me';
+  @Prop() label: string;
   /**
    * Which type of button to render
    */
@@ -34,7 +34,7 @@ export class DsButton {
     const classMap = this.getCssClassMap();
 
     return (
-      <button type={this.type} class={classMap} onClick={this.handleClick} disabled={this.disabled}>
+      <button class={classMap} onClick={this.handleClick} disabled={this.disabled}>
        <slot />
         <div>{this.label}</div>
         <slot />
@@ -44,6 +44,7 @@ export class DsButton {
 
   private getCssClassMap(): CssClassMap {
     return {
+
       [this.type]: true,
       [this.size]: true,
       [this.width]: true

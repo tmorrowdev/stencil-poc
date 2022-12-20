@@ -40,15 +40,57 @@ export declare interface DsButton extends Components.DsButton {}
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
-  inputs: ['disabled', 'size', 'type', 'width']
+  inputs: ['disabled', 'label', 'size', 'type', 'width']
 })
 @Component({
   selector: 'ds-button',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['disabled', 'size', 'type', 'width']
+  inputs: ['disabled', 'label', 'size', 'type', 'width']
 })
 export class DsButton {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface DsCard extends Components.DsCard {}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['cardTitle', 'subtitle']
+})
+@Component({
+  selector: 'ds-card',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['cardTitle', 'subtitle']
+})
+export class DsCard {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface DsTable extends Components.DsTable {}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['headers']
+})
+@Component({
+  selector: 'ds-table',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['headers']
+})
+export class DsTable {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();

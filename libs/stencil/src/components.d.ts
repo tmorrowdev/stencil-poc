@@ -14,6 +14,7 @@ export namespace Components {
     }
     interface DsButton {
         "disabled": boolean;
+        "label": string;
         /**
           * Choose the size of the button
          */
@@ -111,6 +112,7 @@ declare namespace LocalJSX {
     }
     interface DsButton {
         "disabled"?: boolean;
+        "label"?: string;
         /**
           * Choose the size of the button
          */

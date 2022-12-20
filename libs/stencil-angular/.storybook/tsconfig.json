@@ -6,11 +6,14 @@
 
   "exclude": ["../**/*.spec.ts"],
   "include": [
+    "preview.js",
+    "main.js",
     "../src/**/*.stories.ts",
     "../src/**/*.stories.js",
     "../src/**/*.stories.jsx",
     "../src/**/*.stories.tsx",
     "../src/**/*.stories.mdx",
-    "*.js"
+    "*.js",
+    "*.ts"
   ]
 }

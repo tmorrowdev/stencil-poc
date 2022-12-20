@@ -1,5 +1,4 @@
 import { storiesOf } from '@storybook/web-components';
-import {Components} from '@wc/stencil';
 
 
 storiesOf('DsButton', module)

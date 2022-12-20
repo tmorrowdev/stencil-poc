@@ -10,6 +10,10 @@
       "options": {
         "project": "libs/stencil-angular/ng-package.json"
       },
+      "assets": ["dist/libs/stencil/dist/collection/components/ds-button/ds-button.css"],
+      "stylePreprocessorOptions": {
+        "includePaths": ["libs/stencil/src/components/styles"]
+      },
       "configurations": {
         "production": {
           "tsConfig": "libs/stencil-angular/tsconfig.lib.prod.json"

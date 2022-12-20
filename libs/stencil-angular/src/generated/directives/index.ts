@@ -1,8 +1,11 @@
+
 import * as d from './proxies';
 
 export const DIRECTIVES = [
-    d.MyComponent,
-    d.DsAccordion,
-    d.DsButton,
-    d.TextInput
+  d.DsAccordion,
+  d.DsButton,
+  d.DsCard,
+  d.DsTable,
+  d.MyComponent,
+  d.TextInput
 ];

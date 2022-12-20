@@ -1,5 +1,4 @@
 const rootMain = require('../../../.storybook/main');
-
 module.exports = {
   ...rootMain,
   core: { ...rootMain.core, builder: 'webpack5' },
@@ -16,7 +15,7 @@ module.exports = {
     }
 
     // add your own webpack tweaks if needed
-
+   
     return config;
-  },
+  }
 };

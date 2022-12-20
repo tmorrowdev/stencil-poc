@@ -9,6 +9,7 @@ module.exports = {
     '../src/**/*.stories.tsx',
   ],
   addons: [...rootMain.addons],
+  plugins: ["@babel/plugin-syntax-jsx"],
   webpackFinal: async (config, { configType }) => {
     // apply any global webpack configs that might have been specified in .storybook/main.js
     if (rootMain.webpackFinal) {
