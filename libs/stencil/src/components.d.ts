@@ -32,6 +32,8 @@ export namespace Components {
         "cardTitle": string;
         "subtitle": string;
     }
+    interface DsModal {
+    }
     interface DsTable {
         "headers": string[];
     }
@@ -75,6 +77,12 @@ declare global {
         prototype: HTMLDsCardElement;
         new (): HTMLDsCardElement;
     };
+    interface HTMLDsModalElement extends Components.DsModal, HTMLStencilElement {
+    }
+    var HTMLDsModalElement: {
+        prototype: HTMLDsModalElement;
+        new (): HTMLDsModalElement;
+    };
     interface HTMLDsTableElement extends Components.DsTable, HTMLStencilElement {
     }
     var HTMLDsTableElement: {
@@ -97,6 +105,7 @@ declare global {
         "ds-accordion": HTMLDsAccordionElement;
         "ds-button": HTMLDsButtonElement;
         "ds-card": HTMLDsCardElement;
+        "ds-modal": HTMLDsModalElement;
         "ds-table": HTMLDsTableElement;
         "my-component": HTMLMyComponentElement;
         "text-input": HTMLTextInputElement;
@@ -130,6 +139,8 @@ declare namespace LocalJSX {
         "cardTitle"?: string;
         "subtitle"?: string;
     }
+    interface DsModal {
+    }
     interface DsTable {
         "headers"?: string[];
     }
@@ -153,6 +164,7 @@ declare namespace LocalJSX {
         "ds-accordion": DsAccordion;
         "ds-button": DsButton;
         "ds-card": DsCard;
+        "ds-modal": DsModal;
         "ds-table": DsTable;
         "my-component": MyComponent;
         "text-input": TextInput;
@@ -165,6 +177,7 @@ declare module "@stencil/core" {
             "ds-accordion": LocalJSX.DsAccordion & JSXBase.HTMLAttributes<HTMLDsAccordionElement>;
             "ds-button": LocalJSX.DsButton & JSXBase.HTMLAttributes<HTMLDsButtonElement>;
             "ds-card": LocalJSX.DsCard & JSXBase.HTMLAttributes<HTMLDsCardElement>;
+            "ds-modal": LocalJSX.DsModal & JSXBase.HTMLAttributes<HTMLDsModalElement>;
             "ds-table": LocalJSX.DsTable & JSXBase.HTMLAttributes<HTMLDsTableElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
             "text-input": LocalJSX.TextInput & JSXBase.HTMLAttributes<HTMLTextInputElement>;

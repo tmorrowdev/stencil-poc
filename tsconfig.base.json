@@ -17,6 +17,7 @@
     "paths": {
       "@stencil/angular": ["libs/stencil-angular/src/index.ts"],
       "@stencil/react": ["libs/stencil-react/src/index.ts"],
+      "@ds/stencil": ["libs/stencil/src/index.ts"],
       "@wc/stencil": ["dist/libs/stencil"],
       "@wc/stencil/loader": ["dist/libs/stencil/loader"]
     }
