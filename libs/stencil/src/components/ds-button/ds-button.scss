@@ -2,6 +2,7 @@
 
 :host {
   display: block;
+  
 }
 
 button {
@@ -654,4 +655,7 @@ button {
 .button-large-full,
 .button-small-full {
   display: flex;
+}
+ds-button.sc-ds-button-h.sc-ds-button-s button.secondary.large.auto.sc-ds-button.sc-ds-button-s {
+  margin-bottom: 0px !important;
 }

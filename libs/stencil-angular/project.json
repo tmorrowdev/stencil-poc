@@ -1,18 +1,15 @@
 {
   "name": "stencil-angular",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
   "sourceRoot": "libs/stencil-angular/src",
   "prefix": "test",
   "targets": {
     "build": {
       "executor": "@nrwl/angular:package",
-      "outputs": ["dist/libs/stencil-angular"],
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
       "options": {
         "project": "libs/stencil-angular/ng-package.json"
-      },
-      "assets": ["dist/libs/stencil/dist/collection/components/ds-button/ds-button.css"],
-      "stylePreprocessorOptions": {
-        "includePaths": ["libs/stencil/src/components/styles"]
       },
       "configurations": {
         "production": {
@@ -26,7 +23,7 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/stencil-angular"],
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
         "jestConfig": "libs/stencil-angular/jest.config.ts",
         "passWithNoTests": true
@@ -34,40 +31,12 @@
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": [
           "libs/stencil-angular/**/*.ts",
           "libs/stencil-angular/**/*.html"
         ]
-      }
-    },
-    "storybook": {
-      "executor": "@storybook/angular:start-storybook",
-      "options": {
-        "port": 4400,
-        "configDir": "libs/stencil-angular/.storybook",
-        "browserTarget": "stencil-angular:build-storybook",
-        "compodoc": false
-      },
-      "configurations": {
-        "ci": {
-          "quiet": true
-        }
-      }
-    },
-    "build-storybook": {
-      "executor": "@storybook/angular:build-storybook",
-      "outputs": ["{options.outputDir}"],
-      "options": {
-        "outputDir": "dist/storybook/stencil-angular",
-        "configDir": "libs/stencil-angular/.storybook",
-        "browserTarget": "stencil-angular:build-storybook",
-        "compodoc": false
-      },
-      "configurations": {
-        "ci": {
-          "quiet": true
-        }
       }
     }
   },

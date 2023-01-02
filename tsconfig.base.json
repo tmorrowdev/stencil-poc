@@ -6,6 +6,7 @@
     "declaration": false,
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
+    "noImplicitOverride": false,
     "experimentalDecorators": true,
     "importHelpers": true,
     "target": "es2020",
@@ -15,9 +16,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@ds/stencil": ["libs/stencil/src/index.ts"],
       "@stencil/angular": ["libs/stencil-angular/src/index.ts"],
       "@stencil/react": ["libs/stencil-react/src/index.ts"],
-      "@ds/stencil": ["libs/stencil/src/index.ts"],
       "@wc/stencil": ["dist/libs/stencil"],
       "@wc/stencil/loader": ["dist/libs/stencil/loader"]
     }

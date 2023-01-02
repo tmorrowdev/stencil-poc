@@ -5,14 +5,13 @@
     "declaration": true,
     "declarationMap": true,
     "inlineSources": true,
-    "types": ["node"]
+    "types": []
   },
   "exclude": [
     "src/test-setup.ts",
-    "**/*.spec.ts",
-    "**/*.test.ts",
-    "**/*.stories.ts",
-    "**/*.stories.js"
+    "src/**/*.spec.ts",
+    "jest.config.ts",
+    "src/**/*.test.ts"
   ],
-  "include": ["**/*.ts"]
+  "include": ["src/**/*.ts"]
 }

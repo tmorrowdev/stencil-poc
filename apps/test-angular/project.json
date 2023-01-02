@@ -1,4 +1,5 @@
 {
+  "name": "test-angular",
   "projectType": "application",
   "sourceRoot": "apps/test-angular/src",
   "prefix": "test",

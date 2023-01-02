@@ -20,7 +20,7 @@ export namespace Components {
         /**
           * Which type of button to render
          */
-        "type": 'primary' | 'secondary' | 'tertiary';
+        "type": 'primary' | 'secondary' | 'tertiary' | 'emphasized';
         /**
           * Whether the button has fixed or autosized with
          */
@@ -30,24 +30,10 @@ export namespace Components {
         "cardTitle": string;
         "subtitle": string;
     }
+    interface DsInput {
+    }
     interface DsTable {
         "headers": string[];
-    }
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
-    }
-    interface TextInput {
     }
 }
 export interface DsAccordionCustomEvent<T> extends CustomEvent<T> {
@@ -73,38 +59,31 @@ declare global {
         prototype: HTMLDsCardElement;
         new (): HTMLDsCardElement;
     };
+    interface HTMLDsInputElement extends Components.DsInput, HTMLStencilElement {
+    }
+    var HTMLDsInputElement: {
+        prototype: HTMLDsInputElement;
+        new (): HTMLDsInputElement;
+    };
     interface HTMLDsTableElement extends Components.DsTable, HTMLStencilElement {
     }
     var HTMLDsTableElement: {
         prototype: HTMLDsTableElement;
         new (): HTMLDsTableElement;
     };
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
-    }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
-    };
-    interface HTMLTextInputElement extends Components.TextInput, HTMLStencilElement {
-    }
-    var HTMLTextInputElement: {
-        prototype: HTMLTextInputElement;
-        new (): HTMLTextInputElement;
-    };
     interface HTMLElementTagNameMap {
         "ds-accordion": HTMLDsAccordionElement;
         "ds-button": HTMLDsButtonElement;
         "ds-card": HTMLDsCardElement;
+        "ds-input": HTMLDsInputElement;
         "ds-table": HTMLDsTableElement;
-        "my-component": HTMLMyComponentElement;
-        "text-input": HTMLTextInputElement;
     }
 }
 declare namespace LocalJSX {
     interface DsAccordion {
         "buttonLabel"?: string;
         "description"?: string;
-        "onToggle"?: (event: DsAccordionCustomEvent<any>) => void;
+        "onToggle"?: (event: DsAccordionCustomEvent<unknown>) => void;
     }
     interface DsButton {
         "disabled"?: boolean;
@@ -116,7 +95,7 @@ declare namespace LocalJSX {
         /**
           * Which type of button to render
          */
-        "type"?: 'primary' | 'secondary' | 'tertiary';
+        "type"?: 'primary' | 'secondary' | 'tertiary' | 'emphasized';
         /**
           * Whether the button has fixed or autosized with
          */
@@ -126,32 +105,17 @@ declare namespace LocalJSX {
         "cardTitle"?: string;
         "subtitle"?: string;
     }
+    interface DsInput {
+    }
     interface DsTable {
         "headers"?: string[];
-    }
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
-    }
-    interface TextInput {
     }
     interface IntrinsicElements {
         "ds-accordion": DsAccordion;
         "ds-button": DsButton;
         "ds-card": DsCard;
+        "ds-input": DsInput;
         "ds-table": DsTable;
-        "my-component": MyComponent;
-        "text-input": TextInput;
     }
 }
 export { LocalJSX as JSX };
@@ -161,9 +125,8 @@ declare module "@stencil/core" {
             "ds-accordion": LocalJSX.DsAccordion & JSXBase.HTMLAttributes<HTMLDsAccordionElement>;
             "ds-button": LocalJSX.DsButton & JSXBase.HTMLAttributes<HTMLDsButtonElement>;
             "ds-card": LocalJSX.DsCard & JSXBase.HTMLAttributes<HTMLDsCardElement>;
+            "ds-input": LocalJSX.DsInput & JSXBase.HTMLAttributes<HTMLDsInputElement>;
             "ds-table": LocalJSX.DsTable & JSXBase.HTMLAttributes<HTMLDsTableElement>;
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
-            "text-input": LocalJSX.TextInput & JSXBase.HTMLAttributes<HTMLTextInputElement>;
         }
     }
 }

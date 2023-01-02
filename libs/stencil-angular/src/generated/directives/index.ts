@@ -5,7 +5,6 @@ export const DIRECTIVES = [
   d.DsAccordion,
   d.DsButton,
   d.DsCard,
-  d.DsTable,
-  d.MyComponent,
-  d.TextInput
+  d.DsInput,
+  d.DsTable
 ];

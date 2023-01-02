@@ -1,0 +1,13 @@
+{
+  "$schema": "./node_modules/nx/schemas/workspace-schema.json",
+  "version": 2,
+  "projects": {
+    "stencil": "libs/stencil",
+    "stencil-angular": "libs/stencil-angular",
+    "stencil-e2e": "apps/stencil-e2e",
+    "stencil-react": "libs/stencil-react",
+    "test-angular": "apps/test-angular",
+    "test-angular-e2e": "apps/test-angular-e2e",
+    "test-react": "apps/test-react"
+  }
+}

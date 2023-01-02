@@ -1,2 +1,2 @@
 export * from './stencil-angular.module';
-export * from './generated/directives/proxies';
+export {DIRECTIVES} from './generated/directives';

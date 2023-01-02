@@ -12,22 +12,19 @@ export declare interface DsAccordion extends Components.DsAccordion {
   /**
    *  
    */
-  colors: string;
-  description: string;
-  label: string;
-  width: 'auto' | 'full';
+  toggle: EventEmitter<CustomEvent<unknown>>;
 
 }
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
-  inputs: ['color', 'description', 'label', 'width']
+  inputs: ['buttonLabel', 'description']
 })
 @Component({
   selector: 'ds-accordion',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['color', 'description', 'label', 'width']
+  inputs: ['buttonLabel', 'description']
 })
 export class DsAccordion {
   protected el: HTMLElement;
@@ -81,6 +78,25 @@ export class DsCard {
 }
 
 
+export declare interface DsInput extends Components.DsInput {}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined
+})
+@Component({
+  selector: 'ds-input',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>'
+})
+export class DsInput {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
 export declare interface DsTable extends Components.DsTable {}
 
 @ProxyCmp({
@@ -94,46 +110,6 @@ export declare interface DsTable extends Components.DsTable {}
   inputs: ['headers']
 })
 export class DsTable {
-  protected el: HTMLElement;
-  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
-    c.detach();
-    this.el = r.nativeElement;
-  }
-}
-
-
-export declare interface MyComponent extends Components.MyComponent {}
-
-@ProxyCmp({
-  defineCustomElementFn: undefined,
-  inputs: ['first', 'last', 'middle']
-})
-@Component({
-  selector: 'my-component',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  template: '<ng-content></ng-content>',
-  inputs: ['first', 'last', 'middle']
-})
-export class MyComponent {
-  protected el: HTMLElement;
-  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
-    c.detach();
-    this.el = r.nativeElement;
-  }
-}
-
-
-export declare interface TextInput extends Components.TextInput {}
-
-@ProxyCmp({
-  defineCustomElementFn: undefined
-})
-@Component({
-  selector: 'text-input',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  template: '<ng-content></ng-content>'
-})
-export class TextInput {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();

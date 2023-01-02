@@ -53,15 +53,15 @@ export const config: Config = {
     angularOutputTarget({
       componentCorePackage: '@wc/stencil',
       directivesProxyFile:
-        '/libs/stencil-angular/src/generated/directives/proxies.ts',
+        '../stencil-angular/src/generated/directives/proxies.ts',
       directivesArrayFile:
-        '/libs/stencil-angular/src/generated/directives/index.ts',
+        '../stencil-angular/src/generated/directives/index.ts',
       valueAccessorConfigs: angularValueAccessorBindings,
     }),
 
     reactOutputTarget({
       componentCorePackage: '@wc/stencil',
-      proxiesFile: '/libs/stencil-react/src/generated/components.ts',
+      proxiesFile: '../stencil-react/src/generated/components.ts',
       includeDefineCustomElements: true,
     }),
   ],

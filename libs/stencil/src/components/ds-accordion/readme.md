@@ -15,9 +15,9 @@
 
 ## Events
 
-| Event    | Description | Type               |
-| -------- | ----------- | ------------------ |
-| `toggle` |             | `CustomEvent<any>` |
+| Event    | Description | Type                   |
+| -------- | ----------- | ---------------------- |
+| `toggle` |             | `CustomEvent<unknown>` |
 
 
 ## Dependencies

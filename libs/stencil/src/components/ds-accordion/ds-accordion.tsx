@@ -10,7 +10,7 @@ import { Component, State, EventEmitter, Event, Prop, h } from '@stencil/core';
 export class DsAccordion  {
   
   @State() _toggle: boolean = false;
-  @Event() toggle: EventEmitter;
+  @Event() toggle: EventEmitter<unknown>;
 
  @Prop() buttonLabel:string='Dropdown'
 
@@ -21,7 +21,7 @@ export class DsAccordion  {
 
    toggleComponent() {
     this._toggle = !this._toggle;
-    this.toggle.emit({ visible: this._toggle });
+    this.toggle.emit(this._toggle);
   }
 
   render() {

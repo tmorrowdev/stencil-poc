@@ -26,9 +26,17 @@
  .close {
     display: none;
  }
- button span.sc-ds-accordion:nth-child(2) {
-    font-size: 12px !important;
-    margin-left: 8px;
-    bottom: 2px;
-    position: relative;
+ .content-box.open {
+    box-shadow: 1px 1px 3px #d0d1d1 !important;
+}
+
+.open.sc-ds-accordion {
+    display: block;
+    height: auto;
+    border-radius: 0px;
+    border: 1px solid #333333;
+    padding: 8px 24px;
+    margin: 0 16px 16px;
+    width: auto;
+    max-width: fit-content;
 }
