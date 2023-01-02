@@ -1,3 +1,32 @@
 :host {
   display: block;
 }
+.flex.flex-col.card-header.items-center.sc-ds-card {
+  /* font-size: 2rem; */
+  font-family: Roboto, sans-serif;
+  border: 1px solid #ddd3fd !important;
+  border-radius: 4px 4px 0px;
+  padding: 8px 24px;
+  min-width: 300px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+span.text-4xl.font-semibold.font-title.sc-ds-card {
+  font-size: 2rem;
+}
+
+span.text-sm.sc-ds-card {
+  font-size: 1.5rem;
+}
+.flex.gap-2.mt-3.sc-ds-card.sc-ds-card-s {
+  min-height: 50px;
+  border: 1px solid #ddd3fd;
+  border-radius: 0 0 4px 4px;
+}
+
+.flex.flex-col.items-center.justify-between.px-4.py-8.mb-4.bg-white.rounded-md.shadow.h-\[272px\].w-\[312px\].sc-ds-card {
+  min-width: 300px;
+  max-width: fit-content;
+}

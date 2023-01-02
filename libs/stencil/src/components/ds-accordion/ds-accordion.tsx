@@ -3,24 +3,23 @@ import { Component, State, EventEmitter, Event, Prop, h } from '@stencil/core';
 @Component({
   tag: 'ds-accordion',
   styleUrl: 'ds-accordion.scss',
-  shadow: true
+  scoped: true
 })
 
-export class MyComponent {
 
+export class DsAccordion  {
+  
   @State() _toggle: boolean = false;
-
   @Event() toggle: EventEmitter;
 
-  @Prop() label: string;
+ @Prop() buttonLabel:string='Dropdown'
 
   @Prop() description: string;
 
-  @Prop() width: string;
+  
 
-  @Prop() color: string;
 
-  toggleComponent() {
+   toggleComponent() {
     this._toggle = !this._toggle;
     this.toggle.emit({ visible: this._toggle });
   }
@@ -29,17 +28,12 @@ export class MyComponent {
 
     return (
       <div>
-      <button class="accordion"
-      style={{
-        width: this.width,
-        backgroundColor: this.color,
-      }}
+     <ds-Button type="secondary" size="large" width="auto" 
       onClick={() => this.toggleComponent()}>
-      {this.label}
-      {this._toggle ? <span>&#9650;</span> : <span>&#9660;</span>}
-      </button>
-      <div class={`content-box ${this._toggle ? 'open' : 'close'}`}
-      style={{width: this.width}}>
+<span>{this.buttonLabel}</span>
+{ (this._toggle ? <span>&#9650;</span> : <span>&#9660;</span>)}
+      </ds-Button>
+      <div class={`content-box ${this._toggle ? 'open' : 'close'}`}>
       <p>{this.description}</p>
       </div>
       </div>

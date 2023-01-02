@@ -12,7 +12,10 @@ export declare interface DsAccordion extends Components.DsAccordion {
   /**
    *  
    */
-  toggle: EventEmitter<CustomEvent<any>>;
+  colors: string;
+  description: string;
+  label: string;
+  width: 'auto' | 'full';
 
 }
 

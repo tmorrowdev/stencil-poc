@@ -26,18 +26,16 @@ export class DsButton {
 
   @Prop() disabled: boolean = false;
 
-  private handleClick = () => {
-    alert('Received the button click!');
-  }
+ 
 
   render() {
     const classMap = this.getCssClassMap();
 
     return (
-      <button class={classMap} onClick={this.handleClick} disabled={this.disabled}>
+      <button class={classMap}  disabled={this.disabled}>
+       <slot/>
+       {this.label}
        <slot />
-        <div>{this.label}</div>
-        <slot />
       </button>
     );
   }

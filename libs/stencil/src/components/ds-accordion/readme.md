@@ -7,12 +7,10 @@
 
 ## Properties
 
-| Property      | Attribute     | Description | Type     | Default     |
-| ------------- | ------------- | ----------- | -------- | ----------- |
-| `color`       | `color`       |             | `string` | `undefined` |
-| `description` | `description` |             | `string` | `undefined` |
-| `label`       | `label`       |             | `string` | `undefined` |
-| `width`       | `width`       |             | `string` | `undefined` |
+| Property      | Attribute      | Description | Type     | Default      |
+| ------------- | -------------- | ----------- | -------- | ------------ |
+| `buttonLabel` | `button-label` |             | `string` | `'Dropdown'` |
+| `description` | `description`  |             | `string` | `undefined`  |
 
 
 ## Events
@@ -21,6 +19,19 @@
 | -------- | ----------- | ------------------ |
 | `toggle` |             | `CustomEvent<any>` |
 
+
+## Dependencies
+
+### Depends on
+
+- [ds-button](../ds-button)
+
+### Graph
+```mermaid
+graph TD;
+  ds-accordion --> ds-button
+  style ds-accordion fill:#f9f,stroke:#333,stroke-width:4px
+```
 
 ----------------------------------------------
 

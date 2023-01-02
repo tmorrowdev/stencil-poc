@@ -7,10 +7,8 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface DsAccordion {
-        "color": string;
+        "buttonLabel": string;
         "description": string;
-        "label": string;
-        "width": string;
     }
     interface DsButton {
         "disabled": boolean;
@@ -104,11 +102,9 @@ declare global {
 }
 declare namespace LocalJSX {
     interface DsAccordion {
-        "color"?: string;
+        "buttonLabel"?: string;
         "description"?: string;
-        "label"?: string;
         "onToggle"?: (event: DsAccordionCustomEvent<any>) => void;
-        "width"?: string;
     }
     interface DsButton {
         "disabled"?: boolean;

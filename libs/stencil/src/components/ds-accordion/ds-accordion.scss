@@ -26,3 +26,9 @@
  .close {
     display: none;
  }
+ button span.sc-ds-accordion:nth-child(2) {
+    font-size: 12px !important;
+    margin-left: 8px;
+    bottom: 2px;
+    position: relative;
+}

@@ -20,11 +20,13 @@
 
 ### Used by
 
+ - [ds-accordion](../ds-accordion)
  - [text-input](../text-input)
 
 ### Graph
 ```mermaid
 graph TD;
+  ds-accordion --> ds-button
   text-input --> ds-button
   style ds-button fill:#f9f,stroke:#333,stroke-width:4px
 ```

@@ -24,11 +24,11 @@ export class TextInput {
         <label htmlfor="input">
           Name:
           </label>
-          <div class="input">
+          <span class="input">
           <input id="input" type="text" value={this.value} onKeyDown={(event) => this.handleChange(event)} />
         
-        <ds-button type="primary" size="large" width="auto" disabled={false} >Submit</ds-button>
-        </div>
+        <ds-button type="primary" size="small" width="auto" disabled={false} >Search</ds-button>
+        </span>
       </form>
     );
   }

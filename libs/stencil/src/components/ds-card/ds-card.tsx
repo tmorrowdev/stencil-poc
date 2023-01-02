@@ -15,7 +15,7 @@ export class DsCard {
     return (
       <Host>
         <div class="flex flex-col items-center justify-between px-4 py-8 mb-4 bg-white rounded-md shadow h-[272px] w-[312px]">
-          <div class="flex flex-col items-center">
+          <div class="flex flex-col card-header items-center">
             <span class="text-4xl font-semibold font-title">{cardTitle}</span>
             <span class="text-sm">{subtitle}</span>
           </div>
