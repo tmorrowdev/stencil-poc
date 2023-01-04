@@ -1,23 +1,14 @@
-const rootMain = require('../../../.storybook/main');
-
 module.exports = {
-  ...rootMain,
-  core: { ...rootMain.core, builder: 'webpack5' },
-  stories: [
-    ...rootMain.stories,
-    '../src/**/*.stories.mdx',
-    '../src/**/*.stories.tsx',
+  "stories": [
+    "../src/**/*.stories.mdx",
+    "../src/**/*.stories.@(js|jsx|ts|tsx)"
   ],
-  addons: [...rootMain.addons],
-  plugins: ["@babel/plugin-syntax-jsx"],
-  webpackFinal: async (config, { configType }) => {
-    // apply any global webpack configs that might have been specified in .storybook/main.js
-    if (rootMain.webpackFinal) {
-      config = await rootMain.webpackFinal(config, { configType });
-    }
-
-    // add your own webpack tweaks if needed
-
-    return config;
-  },
-};
+  "addons": [
+    "@storybook/addon-links",
+    "@storybook/addon-essentials",
+    "@storybook/addon-controls",
+    "@storybook/addon-postcss"
+  ],
+  "plugins": ['babel-plugin-jsx-dom-expressions'],
+  "framework": "@storybook/html"
+}

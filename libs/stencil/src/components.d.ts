@@ -30,6 +30,12 @@ export namespace Components {
         "cardTitle": string;
         "subtitle": string;
     }
+    interface DsIcon {
+        "alt": string;
+        "icon": string;
+        "iconStyle": 'filled' | 'outlined' | 'round' | 'sharp' | 'two-tone';
+        "size": string;
+    }
     interface DsInput {
     }
     interface DsTable {
@@ -59,6 +65,12 @@ declare global {
         prototype: HTMLDsCardElement;
         new (): HTMLDsCardElement;
     };
+    interface HTMLDsIconElement extends Components.DsIcon, HTMLStencilElement {
+    }
+    var HTMLDsIconElement: {
+        prototype: HTMLDsIconElement;
+        new (): HTMLDsIconElement;
+    };
     interface HTMLDsInputElement extends Components.DsInput, HTMLStencilElement {
     }
     var HTMLDsInputElement: {
@@ -75,6 +87,7 @@ declare global {
         "ds-accordion": HTMLDsAccordionElement;
         "ds-button": HTMLDsButtonElement;
         "ds-card": HTMLDsCardElement;
+        "ds-icon": HTMLDsIconElement;
         "ds-input": HTMLDsInputElement;
         "ds-table": HTMLDsTableElement;
     }
@@ -105,6 +118,12 @@ declare namespace LocalJSX {
         "cardTitle"?: string;
         "subtitle"?: string;
     }
+    interface DsIcon {
+        "alt"?: string;
+        "icon"?: string;
+        "iconStyle"?: 'filled' | 'outlined' | 'round' | 'sharp' | 'two-tone';
+        "size"?: string;
+    }
     interface DsInput {
     }
     interface DsTable {
@@ -114,6 +133,7 @@ declare namespace LocalJSX {
         "ds-accordion": DsAccordion;
         "ds-button": DsButton;
         "ds-card": DsCard;
+        "ds-icon": DsIcon;
         "ds-input": DsInput;
         "ds-table": DsTable;
     }
@@ -125,6 +145,7 @@ declare module "@stencil/core" {
             "ds-accordion": LocalJSX.DsAccordion & JSXBase.HTMLAttributes<HTMLDsAccordionElement>;
             "ds-button": LocalJSX.DsButton & JSXBase.HTMLAttributes<HTMLDsButtonElement>;
             "ds-card": LocalJSX.DsCard & JSXBase.HTMLAttributes<HTMLDsCardElement>;
+            "ds-icon": LocalJSX.DsIcon & JSXBase.HTMLAttributes<HTMLDsIconElement>;
             "ds-input": LocalJSX.DsInput & JSXBase.HTMLAttributes<HTMLDsInputElement>;
             "ds-table": LocalJSX.DsTable & JSXBase.HTMLAttributes<HTMLDsTableElement>;
         }
