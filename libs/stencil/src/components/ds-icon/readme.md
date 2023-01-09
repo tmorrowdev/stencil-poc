@@ -7,12 +7,11 @@
 
 ## Properties
 
-| Property    | Attribute    | Description | Type                                                         | Default     |
-| ----------- | ------------ | ----------- | ------------------------------------------------------------ | ----------- |
-| `alt`       | `alt`        |             | `string`                                                     | `undefined` |
-| `icon`      | `icon`       |             | `string`                                                     | `''`        |
-| `iconStyle` | `icon-style` |             | `"filled" \| "outlined" \| "round" \| "sharp" \| "two-tone"` | `'filled'`  |
-| `size`      | `size`       |             | `string`                                                     | `undefined` |
+| Property | Attribute | Description | Type     | Default     |
+| -------- | --------- | ----------- | -------- | ----------- |
+| `color`  | `color`   |             | `string` | `undefined` |
+| `name`   | `name`    |             | `string` | `''`        |
+| `size`   | `size`    |             | `string` | `undefined` |
 
 
 ----------------------------------------------

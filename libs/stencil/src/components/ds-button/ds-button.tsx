@@ -11,6 +11,7 @@ export class DsButton {
   /**
    * Which type of button to render
    */
+  
   @Prop() type: 'primary' | 'secondary' | 'tertiary' | 'emphasized'  = 'primary';
 
   /**

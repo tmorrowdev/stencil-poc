@@ -78,6 +78,27 @@ export class DsCard {
 }
 
 
+export declare interface DsIcon extends Components.DsIcon {}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['color', 'name', 'size']
+})
+@Component({
+  selector: 'ds-icon',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['color', 'name', 'size']
+})
+export class DsIcon {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
 export declare interface DsInput extends Components.DsInput {}
 
 @ProxyCmp({

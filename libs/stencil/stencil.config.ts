@@ -24,7 +24,7 @@ import { reactOutputTarget } from '@stencil/react-output-target';
 //     ]
 //   }
 // });
-const angularValueAccessorBindings: ValueAccessorConfig[] = [];
+export const angularValueAccessorBindings: ValueAccessorConfig[] = [];
 
 export const config: Config = {
   
@@ -53,15 +53,15 @@ export const config: Config = {
     angularOutputTarget({
       componentCorePackage: '@wc/stencil',
       directivesProxyFile:
-        '../stencil-angular/src/generated/directives/proxies.ts',
+        '../../../libs/stencil-angular/src/generated/directives/proxies.ts',
       directivesArrayFile:
-        '../stencil-angular/src/generated/directives/index.ts',
+        '../../../libs/stencil-angular/src/generated/directives/index.ts',
       valueAccessorConfigs: angularValueAccessorBindings,
     }),
 
     reactOutputTarget({
-      componentCorePackage: '@wc/stencil',
-      proxiesFile: '../stencil-react/src/generated/components.ts',
+      componentCorePackage: '@stencil/react',
+      proxiesFile: '../../../stencil-react/src/generated/components.ts',
       includeDefineCustomElements: true,
     }),
   ],

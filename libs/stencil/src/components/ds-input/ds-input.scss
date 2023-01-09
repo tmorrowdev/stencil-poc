@@ -1,7 +1,7 @@
 :host {
   display: block;
 }
-ds-input ds-button.sc-ds-button-h.sc-ds-button-s.hydrated {
+ds-input, ds-input ds-button.sc-ds-button-h.sc-ds-button-s.hydrated {
   .input #input {
     border-radius: 4px 0px 0 4px;
     height: auto;
@@ -9,6 +9,10 @@ ds-input ds-button.sc-ds-button-h.sc-ds-button-s.hydrated {
     padding: 8px 24px;
     border: 1px solid #666666;
     border-collapse:  collapse !important;
+}
+input#input:focus, input#input:focus-within {
+  border-radius: 4px 0 0 4px !important;
+  outline-offset: 4px;
 }
 button{
   background: #14568d;
@@ -18,5 +22,19 @@ button{
   border-radius: 0 4px 4px 0;
   border-collapse: collapse;
  
+}
+}
+ds-input  form {
+  display: flex;
+  align-content: center;
+  flex-direction: row !important;
+  align-items: center;
+  label {
+    display: block;
+    flex-direction: row;
+    text-overflow: clip;
+    margin-right: 8px;
+    font-size: 16px;
+    font-family: Rubik, sans-serif;
 }
 }

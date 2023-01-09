@@ -31,9 +31,8 @@ export namespace Components {
         "subtitle": string;
     }
     interface DsIcon {
-        "alt": string;
-        "icon": string;
-        "iconStyle": 'filled' | 'outlined' | 'round' | 'sharp' | 'two-tone';
+        "color": string;
+        "name": string;
         "size": string;
     }
     interface DsInput {
@@ -119,9 +118,8 @@ declare namespace LocalJSX {
         "subtitle"?: string;
     }
     interface DsIcon {
-        "alt"?: string;
-        "icon"?: string;
-        "iconStyle"?: 'filled' | 'outlined' | 'round' | 'sharp' | 'two-tone';
+        "color"?: string;
+        "name"?: string;
         "size"?: string;
     }
     interface DsInput {

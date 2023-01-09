@@ -56,11 +56,13 @@ p {
 </head>
 
 <body class="evernorth-theme">
-  <ds-button type="primary" size="large" width="auto"  [disabled]="false">I'm a Button</ds-button>
+  <ds-button type="primary" size="large" width="auto"  [disabled]="false">  <ds-icon name="heart" size="large" color="inherit"></ds-icon>
+    I'm a Button</ds-button>
   <ds-input></ds-input>
   <ds-accordion color="blue" label="Dropdown" description="Content that goes in the accordion" title="Select me"></ds-accordion>
   <ds-table headers="'[Name, Major, Grad Year]'"></ds-table>
   <ds-card title="Card Title" subtitle="Card Subtitle"></ds-card>
 </body>
-
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </html>

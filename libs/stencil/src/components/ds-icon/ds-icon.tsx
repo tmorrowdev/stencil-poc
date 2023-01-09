@@ -6,15 +6,13 @@ import { Component, Prop, h } from '@stencil/core';
   scoped: true
 })
 export class MyIcon {
-  @Prop() icon: string= '';
-  @Prop() iconStyle: 'filled' | 'outlined' | 'round' | 'sharp' | 'two-tone' = 'filled';
-  @Prop() alt: string;
+  @Prop() name: string= '';
+  @Prop() color: string;
   @Prop () size:string;
-  iconLocation = `@material-design-icons/svg/${this.iconStyle}/${this.icon}.svg`;
   render() {
     return (
       <div>
-        <img src={this.iconLocation} class={'icon-size'+this.size}/>
+        <ion-icon name={this.name} style={{ fontSize: `${this.size}px`, color: this.color }}></ion-icon>
       </div>
     )
   }

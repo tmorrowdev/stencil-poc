@@ -659,3 +659,17 @@ button {
 ds-button.sc-ds-button-h.sc-ds-button-s button.secondary.large.auto.sc-ds-button.sc-ds-button-s {
   margin-bottom: 0px !important;
 }
+button.sc-ds-button.sc-ds-button-s {
+  display:  flex;
+  justify-content: center;
+}
+
+ds-icon.sc-ds-icon-h.sc-ds-icon-s.hydrated {
+  display: flex;
+  align-items: center;
+  justify-self: center;
+}
+
+.sc-ds-icon {
+  margin: 1px 5px 0 0;
+}
